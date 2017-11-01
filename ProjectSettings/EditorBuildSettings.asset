@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowToPlayScreen.unity
     guid: 8ebd7f56709c1924091be594fadcca3c
+  - enabled: 0
+    path: Assets/Scenes/HowToPlayScene2.unity
+    guid: 392fd054f1f105b4da122bc6fe581848
+  - enabled: 1
+    path: Assets/Scenes/HowToPlayScreen2.unity
+    guid: 36274c869b131de4bba81d1aaf2e57b1
