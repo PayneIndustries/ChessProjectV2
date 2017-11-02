@@ -25,4 +25,5 @@ public class HighlightScript : MonoBehaviour
             i.GetComponent<Renderer>().material.color = TeamColor;
         }
     }
+    //Life sucks
 }
