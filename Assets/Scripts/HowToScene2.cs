@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
-
+using UnityEditor.SceneManagement;
 
 public class HowToScene2 : MonoBehaviour
 {
-	public void OnMouseClick() {SceneManager.LoadScene("HowToPlayScreen2"); }         
-    
+	public void OnMouseClick() { Application.LoadLevel("HowToPlayScreen2"); }
 }
 
 
