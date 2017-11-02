@@ -43,7 +43,7 @@ public class HighlightScript : MonoBehaviour
         if (tagSelected != null)
         {
             tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
-            tagSelected.tag = "Untagged";
+            tagSelected.tag = "Pawn";
         }
 
         pawn.tag = "Selected";
@@ -61,7 +61,7 @@ public class HighlightScript : MonoBehaviour
         {
             isSelected = true;
         }
-        else if (pawn.tag == "Untagged")
+        else if (pawn.tag == "Pawn")
         {
             isSelected = false;
         }

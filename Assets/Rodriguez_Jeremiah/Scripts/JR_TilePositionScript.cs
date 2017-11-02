@@ -7,6 +7,8 @@ public class JR_TilePositionScript : MonoBehaviour {
     public GameObject thisTile;
     private Vector3 tilePosition;
     private bool pawnHere;
+    private ZM_BoardManager boardManager;
+
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +37,7 @@ public class JR_TilePositionScript : MonoBehaviour {
         if (other.tag == "Pawn")
         {
             pawnHere = true;
+            Occupied();
         }
         else
         {
@@ -52,6 +55,14 @@ public class JR_TilePositionScript : MonoBehaviour {
         else
         {
             Debug.Log("The object that left me is not tagged!");
+        }
+    }
+
+    private void Occupied()
+    {
+        if (pawnHere)
+        {
+            thisTile.tag = "Occupied";
         }
     }
 }
