@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-<<<<<<< HEAD
 # Visual Studio 2017
-=======
-# Visual Studio 2015
->>>>>>> 9aed6f1aa228984b10e6f5b2995c2525c4868dcd
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessProjectV2", "ChessProjectV2.csproj", "{2060DB87-D7AE-4A8B-4674-5FAEEB53561E}"
 EndProject
 Global
