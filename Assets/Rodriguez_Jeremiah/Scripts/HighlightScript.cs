@@ -3,26 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HighlightScript : MonoBehaviour
-{
+{ 
     public GameObject pawn;
+
     [SerializeField]
     GameObject[] SelectedPieces;
-    public Color TeamColor;
+    GameObject tagSelected;
 
+    public Color TeamColor;
+    private bool isSelected = false;
 
     private void OnMouseOver()
     {
+        if (isSelected == false)
+        {
+            foreach (GameObject i in SelectedPieces)
+            {
+                i.GetComponent<Renderer>().material.color = Color.yellow;
+            }
+        }
+
+    }
+    
+    private void OnMouseExit()
+    {
+        if (isSelected == false)
+        {
+            foreach (GameObject i in SelectedPieces)
+            {
+                i.GetComponent<Renderer>().material.color = TeamColor;
+            }
+        }
+    }
+    
+    private void OnMouseDown()
+    {
+        tagSelected = GameObject.FindGameObjectWithTag("Selected");
+
+        if (tagSelected != null)
+        {
+            tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
+            tagSelected.tag = "Untagged";
+        }
+
+        pawn.tag = "Selected";
+
         foreach (GameObject i in SelectedPieces)
         {
             i.GetComponent<Renderer>().material.color = Color.yellow;
         }
+
     }
 
-    private void OnMouseExit()
+    void Update()
     {
-        foreach (GameObject i in SelectedPieces)
+        if(pawn.tag == "Selected")
         {
-            i.GetComponent<Renderer>().material.color = TeamColor;
+            isSelected = true;
+        }
+        else if (pawn.tag == "Untagged")
+        {
+            isSelected = false;
         }
     }
 }
