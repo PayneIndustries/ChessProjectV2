@@ -6,6 +6,7 @@ public class JR_BasePawn : MonoBehaviour
 {
 
     public GameObject Controller;
+    public GameObject currentPawn;
     private Vector3 currentPosition;
     private Vector3 newPosition;
     private GameObject targetedSquare;
@@ -14,7 +15,7 @@ public class JR_BasePawn : MonoBehaviour
     void Start()
     {
 
-        currentPosition = Controller.transform.position;
+        currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
 
     }

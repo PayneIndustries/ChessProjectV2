@@ -147,7 +147,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114177691403580310, guid: 9cf547ea97a15484a83ccc54115c211f,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1694056362}
+    m_RemovedComponents:
+    - {fileID: 114060175971371858, guid: 9cf547ea97a15484a83ccc54115c211f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9cf547ea97a15484a83ccc54115c211f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &41923540
@@ -268,6 +274,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f8bb10b73517fd4bb13635e7d542b74, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &90682631 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1091303281}
+--- !u!1 &106653647 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028761179}
 --- !u!1001 &170976332
 Prefab:
   m_ObjectHideFlags: 0
@@ -331,6 +347,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 2122993703}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -397,6 +433,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1739023192}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -448,6 +504,11 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 2141236071}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -544,6 +605,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &349003997 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 2134500985}
 --- !u!1001 &362377287
 Prefab:
   m_ObjectHideFlags: 0
@@ -592,9 +658,24 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1838350729}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &442558639 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 796169790}
+--- !u!1 &532902420 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1924419664}
 --- !u!1001 &533641095
 Prefab:
   m_ObjectHideFlags: 0
@@ -643,6 +724,11 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1183040802}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -770,9 +856,24 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 442558639}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &839618006 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1644724210}
+--- !u!1 &944122151 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1390112406}
 --- !u!1 &958821805
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 958821805}
+  currentPawn: {fileID: 958821805}
 --- !u!23 &958821807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -932,6 +1034,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 106653647}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -983,6 +1105,11 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 90682631}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -1030,9 +1157,24 @@ Prefab:
       propertyPath: Controller
       value: 
       objectReference: {fileID: 283706974}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1736426768}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1183040802 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 533641095}
+--- !u!1 &1210969453 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1523975050}
 --- !u!1 &1227563040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1300,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 944122151}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -1224,6 +1386,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1210969453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -1379,9 +1561,44 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 839618006}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1694056362 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1852413174057992, guid: 9cf547ea97a15484a83ccc54115c211f,
+    type: 2}
+  m_PrefabInternal: {fileID: 7893084}
+--- !u!1 &1736426768 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1172922598}
+--- !u!1 &1739023192 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 229290786}
 --- !u!1001 &1757952940
 Prefab:
   m_ObjectHideFlags: 0
@@ -1424,6 +1641,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faa591abf4ff46b41b7eb9e7f64992cd, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1838350729 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 362377287}
 --- !u!1001 &1852054609
 Prefab:
   m_ObjectHideFlags: 0
@@ -1472,6 +1694,11 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 1993123231}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
@@ -1584,9 +1811,39 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eff67554a28244e4f81bb573b34b0d97, type: 2}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: TeamColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 532902420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1993123231 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1852054609}
+--- !u!1 &2122993703 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 170976332}
 --- !u!1001 &2134500985
 Prefab:
   m_ObjectHideFlags: 0
@@ -1635,6 +1892,16 @@ Prefab:
       propertyPath: m_Name
       value: Pawn (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106,
+        type: 2}
+      propertyPath: currentPawn
+      value: 
+      objectReference: {fileID: 349003997}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2141236071 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106,
+    type: 2}
+  m_PrefabInternal: {fileID: 256109973}
