@@ -66,4 +66,5 @@ public class HighlightScript : MonoBehaviour
             isSelected = false;
         }
     }
+    //Life sucks
 }
