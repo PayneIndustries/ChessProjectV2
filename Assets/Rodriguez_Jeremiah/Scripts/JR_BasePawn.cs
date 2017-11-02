@@ -10,6 +10,7 @@ public class JR_BasePawn : MonoBehaviour
     private Vector3 currentPosition;
     private Vector3 newPosition;
     private GameObject targetedSquare;
+    private JR_TilePositionScript movementCheck;
 
     // Use this for initialization
     void Start()
@@ -20,14 +21,15 @@ public class JR_BasePawn : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void PositionToMove()
     {
+        movementCheck = targetedSquare.GetComponent<JR_TilePositionScript>();
+        /*  if (movementCheck.pawnThere())
+          {
+              print("This is not a legal move!");
+          }
+      */
+
         newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 1, targetedSquare.transform.position.z);
     }
 
@@ -50,3 +52,12 @@ public class JR_BasePawn : MonoBehaviour
     }
     
 }
+
+/*        
+//        Developer Name: Jeremiah Rodriguez
+//         Contribution: Created the BasePawn to build off of every other pawn.
+//                Feature : Created to run the base movement of the pieces.
+//                Start & End dates : 10/28/17 - 10/29/17
+//                References:
+//                        Links:
+//*/
