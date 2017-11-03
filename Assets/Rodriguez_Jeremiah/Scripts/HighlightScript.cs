@@ -12,6 +12,7 @@ public class HighlightScript : MonoBehaviour
 
     public Color TeamColor;
     private bool isSelected = false;
+    private bool selected = false;
 
     private void OnMouseOver()
     {
@@ -44,6 +45,7 @@ public class HighlightScript : MonoBehaviour
         {
             tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
             tagSelected.tag = "Pawn";
+            Selected();
         }
 
         pawn.tag = "Selected";
@@ -65,5 +67,17 @@ public class HighlightScript : MonoBehaviour
         {
             isSelected = false;
         }
+    }
+
+    public void Selected()
+    {
+        if (pawn.tag != "Selected")
+        {
+            foreach (GameObject i in SelectedPieces)
+            { 
+                i.GetComponent<Renderer>().material.color = TeamColor;
+            }
+            
+        }      
     }
 }
