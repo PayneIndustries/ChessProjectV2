@@ -19,6 +19,6 @@ public class JR_CameraTileLocation : MonoBehaviour {
     public void OnClick() { 
 
             getObject();
-}
+    }
     
 }

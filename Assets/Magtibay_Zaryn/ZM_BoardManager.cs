@@ -37,14 +37,21 @@ public class ZM_BoardManager : MonoBehaviour {
     public GameObject SelectedTile()
     {
         tileLocationscript = selectedTile.GetComponent<JR_TilePositionScript>();
-        positionOfTileSelected = tileLocationscript.TilePosition();
-        positionOfSelectedTile();
+
+        if (tileLocationscript.TilePosition() != null && tileLocationscript != null)
+        {
+            positionOfTileSelected = tileLocationscript.TilePosition();
+            positionOfSelectedTile();
+        }
         return selectedTile;
     }
 
     public Vector3 positionOfSelectedTile()
     {
-        Debug.Log(positionOfTileSelected);
+        if (positionOfTileSelected != null)
+        {
+            Debug.Log(positionOfTileSelected);
+        }
         return positionOfTileSelected;
         
     }
