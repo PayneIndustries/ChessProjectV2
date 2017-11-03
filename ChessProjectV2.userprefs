@@ -1,13 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HowToScene2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HowToScene3.cs">
     <Files>
-      <File FileName="Assets\Scripts\HowToSceneManager.cs" Line="18" Column="1" />
-      <File FileName="Assets\Scripts\HowToScene2.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\HowToSceneManager.cs" Line="13" Column="1" />
+      <File FileName="Assets\Scripts\HowToScene2.cs" Line="14" Column="1" />
+      <File FileName="Assets\Scripts\HowToScene3.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\MainMenuButtonScript.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="C:\Users\gamef\Documents\GitHub\ChessProjectV2\Assets\Scripts\HowToScene2.cs" line="6" column="3" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -51,14 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Magtibay_Zaryn\ZM_BoardManager.cs" />
      <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\HighlightScript.cs" />
      <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_BasePawn.cs" />
+     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_CameraTileLocation.cs" />
+     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_TilePositionScript.cs" />
      <Compile Include="Assets\Scripts\HowToScene2.cs" />
+     <Compile Include="Assets\Scripts\HowToScene3.cs" />
      <Compile Include="Assets\Scripts\HowToSceneManager.cs" />
+     <Compile Include="Assets\Scripts\MainMenuButtonScript.cs" />
      <Compile Include="Assets\Scripts\QuitSceneManager.cs" />
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/gamef/Documents/GitHub/ChessProjectV2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/UE_4.17/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
