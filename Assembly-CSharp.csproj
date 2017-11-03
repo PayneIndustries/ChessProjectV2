@@ -56,6 +56,7 @@
      <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_BasePawn.cs" />
      <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_CameraTileLocation.cs" />
      <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_TilePositionScript.cs" />
+     <Compile Include="Assets\Scripts\CreditsScreen.cs" />
      <Compile Include="Assets\Scripts\HowToScene2.cs" />
      <Compile Include="Assets\Scripts\HowToScene3.cs" />
      <Compile Include="Assets\Scripts\HowToScene4.cs" />
