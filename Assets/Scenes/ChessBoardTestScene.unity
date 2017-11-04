@@ -1832,72 +1832,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729837187b8e8cf4da5af7b22bf42b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tiles:
-  - {fileID: 866496097}
-  - {fileID: 1193649046}
-  - {fileID: 519296596}
-  - {fileID: 129135736}
-  - {fileID: 201322866}
-  - {fileID: 1535132149}
-  - {fileID: 1376348720}
-  - {fileID: 1256768816}
-  - {fileID: 877431907}
-  - {fileID: 1170835749}
-  - {fileID: 847601554}
-  - {fileID: 1563717071}
-  - {fileID: 398248198}
-  - {fileID: 1265081244}
-  - {fileID: 2070054812}
-  - {fileID: 1868866762}
-  - {fileID: 1818631226}
-  - {fileID: 252175962}
-  - {fileID: 553032854}
-  - {fileID: 404976712}
-  - {fileID: 713634169}
-  - {fileID: 1717117154}
-  - {fileID: 1666938572}
-  - {fileID: 2128189496}
-  - {fileID: 1557268945}
-  - {fileID: 1508609416}
-  - {fileID: 1453946577}
-  - {fileID: 1068737360}
-  - {fileID: 300063687}
-  - {fileID: 1781312544}
-  - {fileID: 628724054}
-  - {fileID: 802174446}
-  - {fileID: 478996269}
-  - {fileID: 1619391482}
-  - {fileID: 582292176}
-  - {fileID: 1360813676}
-  - {fileID: 1033387434}
-  - {fileID: 739102699}
-  - {fileID: 670729219}
-  - {fileID: 919295081}
-  - {fileID: 2052942643}
-  - {fileID: 660964148}
-  - {fileID: 55725653}
-  - {fileID: 29995643}
-  - {fileID: 162171378}
-  - {fileID: 187033285}
-  - {fileID: 296904034}
-  - {fileID: 757377533}
-  - {fileID: 622125872}
-  - {fileID: 1974334477}
-  - {fileID: 489956312}
-  - {fileID: 1305001497}
-  - {fileID: 560865512}
-  - {fileID: 283055574}
-  - {fileID: 560871488}
-  - {fileID: 1028268060}
-  - {fileID: 1949869842}
-  - {fileID: 1883781394}
-  - {fileID: 159557442}
-  - {fileID: 1055845051}
-  - {fileID: 403934445}
-  - {fileID: 1406491868}
-  - {fileID: 638724389}
-  - {fileID: 1160543994}
   Camera: {fileID: 1636547354}
+  brown: {r: 0.45588237, g: 0.33012173, b: 0, a: 0}
+  lightB: {r: 1, g: 0.9362069, b: 0.72794116, a: 0}
+  tile: {fileID: 1178692081544636, guid: 4a1c8bdf335187441ae4beda9f1ad8bd, type: 2}
 --- !u!65 &1118910367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2725,7 +2663,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636547350}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.86, y: 18.82, z: 14.23}
+  m_LocalPosition: {x: 4.06, y: 8.69, z: 3.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2882,7 +2820,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4882702922946520, guid: faa591abf4ff46b41b7eb9e7f64992cd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.51
+      value: -7.34
       objectReference: {fileID: 0}
     - target: {fileID: 4882702922946520, guid: faa591abf4ff46b41b7eb9e7f64992cd, type: 2}
       propertyPath: m_LocalPosition.y
