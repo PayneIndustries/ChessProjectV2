@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ZM_BoardManager : MonoBehaviour {
 
+<<<<<<< HEAD
     [SerializeField] GameObject[] Tiles;
+=======
+    public GameObject[,] Tiles = new GameObject [8,8];
+>>>>>>> ada16b81bed20346170aa521babb6e76ea57676d
     private GameObject selectedTile;
     private JR_TilePositionScript tileLocationscript;
     private JR_CameraTileLocation cameraControl;
@@ -42,6 +46,10 @@ public class ZM_BoardManager : MonoBehaviour {
         {
             positionOfTileSelected = tileLocationscript.TilePosition();
             positionOfSelectedTile();
+        }
+        foreach (GameObject tile in Tiles) {
+            tile.transform.position = positionOfTileSelected;
+            return tile;
         }
         return selectedTile;
     }
