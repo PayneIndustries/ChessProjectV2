@@ -256,6 +256,8 @@ Prefab:
     - {fileID: 136364598268914152, guid: 958da15b914873945b0050520f159106, type: 2}
     - {fileID: 135184500365528106, guid: 958da15b914873945b0050520f159106, type: 2}
     - {fileID: 65920473879195038, guid: 958da15b914873945b0050520f159106, type: 2}
+    - {fileID: 114820405935042994, guid: 958da15b914873945b0050520f159106, type: 2}
+    - {fileID: 114833130151891660, guid: 958da15b914873945b0050520f159106, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 958da15b914873945b0050520f159106, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &283706974
@@ -543,6 +545,7 @@ MonoBehaviour:
   Controller: {fileID: 283706974}
   currentPawn: {fileID: 664800729}
   startPosition: {x: 5, y: 0, z: 0}
+  BoardManager: {fileID: 958821805}
 --- !u!1 &669072911 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1461333339880822, guid: 4f8bb10b73517fd4bb13635e7d542b74,
@@ -665,6 +668,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcad83c557f10c4782e4a2098080bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChessPieces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  selectedTile: {fileID: 0}
   Camera: {fileID: 1636547354}
   brown: {r: 0, g: 0, b: 0, a: 0}
   lightB: {r: 1, g: 1, b: 1, a: 0}
@@ -1122,6 +1159,7 @@ MonoBehaviour:
   Controller: {fileID: 283706974}
   currentPawn: {fileID: 1694056362}
   startPosition: {x: 0, y: 0, z: 0}
+  BoardManager: {fileID: 958821805}
 --- !u!114 &1694056367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1219,7 @@ MonoBehaviour:
   Controller: {fileID: 283706974}
   currentPawn: {fileID: 1753674351}
   startPosition: {x: 2, y: 0, z: 0}
+  BoardManager: {fileID: 958821805}
 --- !u!65 &1753674355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1315,6 +1354,7 @@ MonoBehaviour:
   Controller: {fileID: 283706974}
   currentPawn: {fileID: 1902092539}
   startPosition: {x: 3, y: 0, z: 0}
+  BoardManager: {fileID: 958821805}
 --- !u!65 &1902092543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1429,6 +1469,7 @@ MonoBehaviour:
   Controller: {fileID: 283706974}
   currentPawn: {fileID: 2141236071}
   startPosition: {x: 6, y: 0, z: 0}
+  BoardManager: {fileID: 958821805}
 --- !u!114 &2141236076
 MonoBehaviour:
   m_ObjectHideFlags: 0

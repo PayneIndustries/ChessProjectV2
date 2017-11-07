@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4268513964376398}
   - component: {fileID: 33458667707168128}
   - component: {fileID: 23327572735381834}
-  - component: {fileID: 114177691403580310}
   - component: {fileID: 65623492105003768}
   - component: {fileID: 114622368871209796}
   m_Layer: 0
@@ -90,7 +89,6 @@ GameObject:
   - component: {fileID: 4445218635737644}
   - component: {fileID: 33977631730395560}
   - component: {fileID: 23623169581222516}
-  - component: {fileID: 114060175971371858}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -335,30 +333,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3247824, y: 2.6954546, z: 1.3677452}
   m_Center: {x: -0.0109518375, y: -0.847727, z: -0.025345802}
---- !u!114 &114060175971371858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855388404801344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07034c9291640784dbab94c1224d900b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: {fileID: 0}
---- !u!114 &114177691403580310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1420089258961260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07034c9291640784dbab94c1224d900b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: {fileID: 1420089258961260}
 --- !u!114 &114622368871209796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -376,4 +350,5 @@ MonoBehaviour:
   - {fileID: 1855388404801344}
   - {fileID: 1460591335640780}
   - {fileID: 1241768230854236}
+  isEnabled: 1
   TeamColor: {r: 1, g: 1, b: 1, a: 0}

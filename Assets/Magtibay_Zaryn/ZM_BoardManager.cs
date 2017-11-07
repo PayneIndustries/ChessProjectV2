@@ -5,7 +5,8 @@ using UnityEngine;
 public class ZM_BoardManager : MonoBehaviour {
 
     public GameObject[,] Tiles = new GameObject [8,8];
-    private GameObject selectedTile;
+    public GameObject[] ChessPieces = new GameObject[32];
+    public GameObject selectedTile;
     private JR_TilePositionScript tileLocationscript;
     private JR_CameraTileLocation cameraControl;
     private Vector3 positionOfTileSelected;
@@ -70,10 +71,18 @@ public class ZM_BoardManager : MonoBehaviour {
             positionOfTileSelected = tileLocationscript.TilePosition();
             positionOfSelectedTile();
         }
-        foreach (GameObject tile in Tiles) {
-            tile.transform.position = positionOfTileSelected;
-            return tile;
+        //foreach (GameObject tile in Tiles) {
+            //tile.transform.position = positionOfTileSelected;
+       // }
+
+        foreach(GameObject tile in Tiles)
+        {
+            if(tile.transform.position == positionOfTileSelected)
+            {
+                selectedTile = tile;              
+            }
         }
+        
         return selectedTile;
     }
 

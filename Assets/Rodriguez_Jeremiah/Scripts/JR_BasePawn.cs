@@ -14,6 +14,7 @@ public class JR_BasePawn : MonoBehaviour
 
     [SerializeField]public Vector3 startPosition;
     private ZM_BoardManager board;
+    public GameObject BoardManager;
 
     // Use this for initialization
     void Start()
@@ -21,19 +22,37 @@ public class JR_BasePawn : MonoBehaviour
         currentPawn.transform.position = new Vector3 (startPosition.x,0.5f,startPosition.z);
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
+        board = BoardManager.GetComponent<ZM_BoardManager>();
 
+    }
+
+    private void Update()
+    {
+        //Test Movement by removing Comments on Update.
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+           // PositionToMove();
+      //  }
+
+        
     }
 
     public void PositionToMove()
     {
-        movementCheck = targetedSquare.GetComponent<JR_TilePositionScript>();
-        /*  if (movementCheck.pawnThere())
-          {
-              print("This is not a legal move!");
-          }
-      */
+        if (currentPawn.tag == "Selected")
+        {
+            if (board.selectedTile != null)
+            {
+                targetedSquare = board.SelectedTile();
+                newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 1, targetedSquare.transform.position.z);
+                MovedPosition();
+            }
 
-        newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 1, targetedSquare.transform.position.z);
+            else if(board.selectedTile == null)
+            {
+                Debug.Log("Why am I invalid?");
+            }
+        }
     }
 
     void MovedPosition()
@@ -41,6 +60,8 @@ public class JR_BasePawn : MonoBehaviour
         if (currentPosition != newPosition)
         {
             currentPosition = newPosition;
+
+            currentPawn.transform.position = newPosition;
         }
     }
 
