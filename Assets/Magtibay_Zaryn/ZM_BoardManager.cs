@@ -60,6 +60,7 @@ public class ZM_BoardManager : MonoBehaviour {
         var gridPosition = Tiles[(int)x, (int)z];
         return gridPosition;
         //return Tiles[(int)x, (int)z];
+
     }
 
 
@@ -94,6 +95,11 @@ public class ZM_BoardManager : MonoBehaviour {
             Debug.Log(selectedTile);
 
         }
+
+        
+            //return tile;
+        //}
+
         return selectedTile;
     }
 
