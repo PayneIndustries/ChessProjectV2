@@ -10,25 +10,16 @@ public class HighlightScript : MonoBehaviour
     GameObject[] SelectedPieces;
     GameObject tagSelected;
 
-    public bool isEnabled = true;
     public Color TeamColor;
     private bool isSelected = false;
 
     private void OnMouseOver()
     {
-<<<<<<< HEAD
         if (isSelected == false)
-=======
-        if (isEnabled)
->>>>>>> RyanBranch
         {
-            mouseIsOver = true;
-            if (isSelected == false)
+            foreach (GameObject i in SelectedPieces)
             {
-                foreach (GameObject i in SelectedPieces)
-                {
-                    i.GetComponent<Renderer>().material.color = Color.yellow;
-                }
+                i.GetComponent<Renderer>().material.color = Color.yellow;
             }
         }
 
@@ -36,47 +27,20 @@ public class HighlightScript : MonoBehaviour
     
     private void OnMouseExit()
     {
-<<<<<<< HEAD
         if (isSelected == false)
-=======
-        if (isEnabled)
->>>>>>> RyanBranch
         {
-            mouseIsOver = false;
-            if (isSelected == false)
+            foreach (GameObject i in SelectedPieces)
             {
-                foreach (GameObject i in SelectedPieces)
-                {
-                    i.GetComponent<Renderer>().material.color = TeamColor;
-                }
+                i.GetComponent<Renderer>().material.color = TeamColor;
             }
         }
     }
     
     private void OnMouseDown()
     {
-<<<<<<< HEAD
         tagSelected = GameObject.FindGameObjectWithTag("Selected");
 
         if (tagSelected != null)
-=======
-        if (isEnabled)
-        {
-            tagSelected = GameObject.FindGameObjectWithTag("Selected");
-            mouseIsOver = false;
-            Selected();
-            SetSelected();
-        }
-    }
-
-    void Update()
-    {
-        if(pawn.tag == "Selected")
-        {
-            isSelected = true;
-        }
-        else if (pawn.tag == "Pawn")
->>>>>>> RyanBranch
         {
             tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
             tagSelected.tag = "Pawn";
