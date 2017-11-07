@@ -5,7 +5,8 @@ using UnityEngine;
 public class ZM_BoardManager : MonoBehaviour {
 
     public GameObject[,] Tiles = new GameObject [8,8];
-    private GameObject selectedTile;
+    public GameObject[] ChessPieces = new GameObject[32];
+    public GameObject selectedTile;
     private JR_TilePositionScript tileLocationscript;
     private JR_CameraTileLocation cameraControl;
     private Vector3 positionOfTileSelected;
@@ -73,6 +74,16 @@ public class ZM_BoardManager : MonoBehaviour {
         }
         //foreach (GameObject tile in Tiles) {
             //tile.transform.position = positionOfTileSelected;
+       // }
+
+        foreach(GameObject tile in Tiles)
+        {
+            if(tile.transform.position == positionOfTileSelected)
+            {
+                selectedTile = tile;              
+            }
+        }
+        
             //return tile;
         //}
         return selectedTile;
@@ -90,7 +101,3 @@ public class ZM_BoardManager : MonoBehaviour {
 }
 
 //Editted by Jeremiah Rodriguez
-
-
-    //figure out how to tell what tile a pawn is on.
-    //return tile location to get a tile out of the array
