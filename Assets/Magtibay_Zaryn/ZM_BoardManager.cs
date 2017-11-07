@@ -59,10 +59,7 @@ public class ZM_BoardManager : MonoBehaviour {
         var z = pawn.transform.position.z;
         var gridPosition = Tiles[(int)x, (int)z];
         return gridPosition;
-<<<<<<< HEAD
         //return Tiles[(int)x, (int)z];
-=======
->>>>>>> fb85fe58cb9b0fcc46b153bab3fb3db418c6788f
     }
 
 
@@ -97,12 +94,6 @@ public class ZM_BoardManager : MonoBehaviour {
             Debug.Log(selectedTile);
 
         }
-<<<<<<< HEAD
-=======
-        
-            //return tile;
-        //}
->>>>>>> fb85fe58cb9b0fcc46b153bab3fb3db418c6788f
         return selectedTile;
     }
 
