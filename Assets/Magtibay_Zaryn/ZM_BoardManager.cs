@@ -53,10 +53,11 @@ public class ZM_BoardManager : MonoBehaviour {
 
 	}
 
-    public void whatTileIsPawnOn(GameObject pawn) {
+    public GameObject whatTileIsPawnOn(GameObject pawn) {
         var x = pawn.transform.position.x;
         var z = pawn.transform.position.z;
-        //return Tiles[(int)x, (int)z];
+        var gridPosition = Tiles[(int)x, (int)z];
+        return gridPosition;
     }
 
 
@@ -70,10 +71,10 @@ public class ZM_BoardManager : MonoBehaviour {
             positionOfTileSelected = tileLocationscript.TilePosition();
             positionOfSelectedTile();
         }
-        foreach (GameObject tile in Tiles) {
-            tile.transform.position = positionOfTileSelected;
-            return tile;
-        }
+        //foreach (GameObject tile in Tiles) {
+            //tile.transform.position = positionOfTileSelected;
+            //return tile;
+        //}
         return selectedTile;
     }
 
