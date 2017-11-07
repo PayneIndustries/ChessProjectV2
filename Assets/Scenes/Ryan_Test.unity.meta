@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Rodriguez_Jeremiah/AudioAssets.meta
 guid: d116d99feaa356d4a8606be7d069034d
 folderAsset: yes
 timeCreated: 1509735332
+=======
+guid: 106be23c4ea09a149b073b8cac7f99bc
+timeCreated: 1510006773
+>>>>>>> RyanBranch:Assets/Scenes/Ryan_Test.unity.meta
 licenseType: Free
 DefaultImporter:
   userData: 
