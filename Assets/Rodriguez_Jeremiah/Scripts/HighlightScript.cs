@@ -10,16 +10,22 @@ public class HighlightScript : MonoBehaviour
     GameObject[] SelectedPieces;
     GameObject tagSelected;
 
+    public bool isEnabled = true;
     public Color TeamColor;
     private bool isSelected = false;
+    private bool mouseIsOver;
 
     private void OnMouseOver()
     {
-        if (isSelected == false)
+        if (isEnabled)
         {
-            foreach (GameObject i in SelectedPieces)
+            mouseIsOver = true;
+            if (isSelected == false)
             {
-                i.GetComponent<Renderer>().material.color = Color.yellow;
+                foreach (GameObject i in SelectedPieces)
+                {
+                    i.GetComponent<Renderer>().material.color = Color.yellow;
+                }
             }
         }
 
@@ -27,32 +33,28 @@ public class HighlightScript : MonoBehaviour
     
     private void OnMouseExit()
     {
-        if (isSelected == false)
+        if (isEnabled)
         {
-            foreach (GameObject i in SelectedPieces)
+            mouseIsOver = false;
+            if (isSelected == false)
             {
-                i.GetComponent<Renderer>().material.color = TeamColor;
+                foreach (GameObject i in SelectedPieces)
+                {
+                    i.GetComponent<Renderer>().material.color = TeamColor;
+                }
             }
         }
     }
     
     private void OnMouseDown()
     {
-        tagSelected = GameObject.FindGameObjectWithTag("Selected");
-
-        if (tagSelected != null)
+        if (isEnabled)
         {
-            tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
-            tagSelected.tag = "Pawn";
+            tagSelected = GameObject.FindGameObjectWithTag("Selected");
+            mouseIsOver = false;
+            Selected();
+            SetSelected();
         }
-
-        pawn.tag = "Selected";
-
-        foreach (GameObject i in SelectedPieces)
-        {
-            i.GetComponent<Renderer>().material.color = Color.yellow;
-        }
-
     }
 
     void Update()
@@ -64,6 +66,47 @@ public class HighlightScript : MonoBehaviour
         else if (pawn.tag == "Pawn")
         {
             isSelected = false;
+        }
+
+        if(pawn.tag != "Selected" && mouseIsOver != true )
+        {
+            Selected();
+        }
+
+    }
+
+    public void Selected()
+    {
+        foreach (GameObject i in SelectedPieces)
+        {
+            i.GetComponent<Renderer>().material.color = TeamColor;
+        }
+    
+            
+    }
+
+    public void SetSelected()
+    {
+        if (mouseIsOver != true)
+        {
+            if (tagSelected != null)
+            {
+                //tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
+                foreach (GameObject i in SelectedPieces)
+                {
+                    i.GetComponent<Renderer>().material.color = TeamColor;
+                }
+
+                tagSelected.tag = "Pawn";
+            }
+
+            pawn.tag = "Selected";
+
+            foreach (GameObject i in SelectedPieces)
+            {
+                i.GetComponent<Renderer>().material.color = Color.yellow;
+            }
+
         }
     }
 }
