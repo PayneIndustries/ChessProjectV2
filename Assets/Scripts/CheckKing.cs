@@ -17,6 +17,7 @@ public class CheckKing : MonoBehaviour {
 		else {
 			
 		}
+		return statement;
 	}
 	// Update is called once per frame
 	void Update() {
