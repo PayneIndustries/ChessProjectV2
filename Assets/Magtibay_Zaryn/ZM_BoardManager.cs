@@ -54,10 +54,11 @@ public class ZM_BoardManager : MonoBehaviour {
 
 	}
 
-    public void whatTileIsPawnOn(GameObject pawn) {
+    public GameObject whatTileIsPawnOn(GameObject pawn) {
         var x = pawn.transform.position.x;
         var z = pawn.transform.position.z;
-        //return Tiles[(int)x, (int)z];
+        var gridPosition = Tiles[(int)x, (int)z];
+        return gridPosition;
     }
 
 
@@ -73,6 +74,7 @@ public class ZM_BoardManager : MonoBehaviour {
         }
         //foreach (GameObject tile in Tiles) {
             //tile.transform.position = positionOfTileSelected;
+<<<<<<< HEAD
        // }
 
         foreach(GameObject tile in Tiles)
@@ -83,6 +85,10 @@ public class ZM_BoardManager : MonoBehaviour {
             }
         }
         
+=======
+            //return tile;
+        //}
+>>>>>>> ZarynBranch
         return selectedTile;
     }
 
