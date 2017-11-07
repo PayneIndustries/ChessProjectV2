@@ -74,7 +74,6 @@ public class ZM_BoardManager : MonoBehaviour {
         }
         //foreach (GameObject tile in Tiles) {
             //tile.transform.position = positionOfTileSelected;
-<<<<<<< HEAD
        // }
 
         foreach(GameObject tile in Tiles)
@@ -85,10 +84,8 @@ public class ZM_BoardManager : MonoBehaviour {
             }
         }
         
-=======
             //return tile;
         //}
->>>>>>> ZarynBranch
         return selectedTile;
     }
 

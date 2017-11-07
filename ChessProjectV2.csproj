@@ -55,9 +55,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -77,17 +74,7 @@
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
-<<<<<<< HEAD
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-=======
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
->>>>>>> aa7fcffce2044bda06e191c1e8a227bb90947f9f
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +91,7 @@
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Rook.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_TilePositionScript.cs" />
     <Compile Include="Assets\Scripts\CheckKing.cs" />
+    <Compile Include="Assets\Scripts\CreditsScreen.cs" />
     <Compile Include="Assets\Scripts\HowToScene2.cs" />
     <Compile Include="Assets\Scripts\HowToScene3.cs" />
     <Compile Include="Assets\Scripts\HowToScene4.cs" />
