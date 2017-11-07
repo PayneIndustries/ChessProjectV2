@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CheckKing.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Timer.cs">
     <Files>
       <File FileName="Assets\Scripts\HowToSceneManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HowToScene2.cs" Line="1" Column="1" />
@@ -8,7 +8,8 @@
       <File FileName="Assets\Scripts\MainMenuButtonScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HowToScene4.cs" Line="1" Column="1" />
       <File FileName="Assets\Magtibay_Zaryn\ZM_BoardManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CheckKing.cs" Line="20" Column="1" />
+      <File FileName="Assets\Scripts\CheckKing.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Timer.cs" Line="19" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
