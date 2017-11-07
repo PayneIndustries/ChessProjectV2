@@ -6,7 +6,7 @@ public class ZM_BoardManager : MonoBehaviour {
 
     public GameObject[,] Tiles = new GameObject [8,8];
     public GameObject[] ChessPieces = new GameObject[32];
-    public GameObject selectedTile;
+    private GameObject selectedTile;
     private JR_TilePositionScript tileLocationscript;
     private JR_CameraTileLocation cameraControl;
     private Vector3 positionOfTileSelected;
@@ -54,9 +54,11 @@ public class ZM_BoardManager : MonoBehaviour {
 
 	}
 
-    public void whatTileIsPawnOn(GameObject pawn) {
+    public GameObject whatTileIsPawnOn(GameObject pawn) {
         var x = pawn.transform.position.x;
         var z = pawn.transform.position.z;
+        var gridPosition = Tiles[(int)x, (int)z];
+        return gridPosition;
         //return Tiles[(int)x, (int)z];
     }
 
@@ -64,29 +66,38 @@ public class ZM_BoardManager : MonoBehaviour {
     // Accessor for Calling Gameobject after raycasthit
     public GameObject SelectedTile()
     {
-        tileLocationscript = selectedTile.GetComponent<JR_TilePositionScript>();
 
-        if (tileLocationscript.TilePosition() != null && tileLocationscript != null)
+        foreach (GameObject tile in Tiles)
         {
-            positionOfTileSelected = tileLocationscript.TilePosition();
-            positionOfSelectedTile();
-        }
-        //foreach (GameObject tile in Tiles) {
-            //tile.transform.position = positionOfTileSelected;
-       // }
-
-        foreach(GameObject tile in Tiles)
-        {
-            if(tile.transform.position == positionOfTileSelected)
+            if (tile == cameraControl.getObject())
             {
-                selectedTile = tile;              
+                selectedTile = tile;
             }
         }
-        
+
+        if (selectedTile == null)
+        {
+            Debug.Log("I am not a tile!");
+            selectedTile = cameraControl.getObject();
+        }
+
+        else
+        {
+            tileLocationscript = selectedTile.GetComponent<JR_TilePositionScript>();
+
+            if (tileLocationscript.TilePosition() != null && tileLocationscript != null)
+            {
+                positionOfTileSelected = tileLocationscript.TilePosition();
+                PositionOfSelectedTile();
+            }
+
+            Debug.Log(selectedTile);
+
+        }
         return selectedTile;
     }
 
-    public Vector3 positionOfSelectedTile()
+    public Vector3 PositionOfSelectedTile()
     {
         if (positionOfTileSelected != null)
         {

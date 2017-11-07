@@ -15,9 +15,10 @@ public class JR_BasePawn : MonoBehaviour
     [SerializeField]public Vector3 startPosition;
     private ZM_BoardManager board;
     public GameObject BoardManager;
+    public bool isWhite;
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         currentPawn.transform.position = new Vector3 (startPosition.x,0.5f,startPosition.z);
         currentPosition = currentPawn.transform.position;
@@ -26,14 +27,8 @@ public class JR_BasePawn : MonoBehaviour
 
     }
 
-    private void Update()
+    public void Update()
     {
-        //Test Movement by removing Comments on Update.
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-           // PositionToMove();
-      //  }
-
         
     }
 
@@ -41,21 +36,21 @@ public class JR_BasePawn : MonoBehaviour
     {
         if (currentPawn.tag == "Selected")
         {
-            if (board.selectedTile != null)
+            if (board.SelectedTile() != null && board.SelectedTile().tag != "Occupied")
             {
                 targetedSquare = board.SelectedTile();
                 newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 1, targetedSquare.transform.position.z);
                 MovedPosition();
             }
 
-            else if(board.selectedTile == null)
+            else if(board.SelectedTile() == null)
             {
-                Debug.Log("Why am I invalid?");
+                Debug.Log("Object instance 'board' not set");
             }
         }
     }
 
-    void MovedPosition()
+    public void MovedPosition()
     {
         if (currentPosition != newPosition)
         {
@@ -70,11 +65,11 @@ public class JR_BasePawn : MonoBehaviour
         return currentPosition;
     }
 
-    public void OnDestroy()
+    public GameObject Board()
     {
-        Destroy(gameObject);
+        return BoardManager;
     }
-    
+
 }
 
 /*        
