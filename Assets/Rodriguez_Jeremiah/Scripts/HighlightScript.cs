@@ -12,11 +12,9 @@ public class HighlightScript : MonoBehaviour
 
     public Color TeamColor;
     private bool isSelected = false;
-    private bool mouseIsOver;
 
     private void OnMouseOver()
     {
-        mouseIsOver = true;
         if (isSelected == false)
         {
             foreach (GameObject i in SelectedPieces)
@@ -29,7 +27,6 @@ public class HighlightScript : MonoBehaviour
     
     private void OnMouseExit()
     {
-        mouseIsOver = false;
         if (isSelected == false)
         {
             foreach (GameObject i in SelectedPieces)
@@ -42,9 +39,19 @@ public class HighlightScript : MonoBehaviour
     private void OnMouseDown()
     {
         tagSelected = GameObject.FindGameObjectWithTag("Selected");
-        mouseIsOver = false;
-        Selected();
-        SetSelected();
+
+        if (tagSelected != null)
+        {
+            tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
+            tagSelected.tag = "Pawn";
+        }
+
+        pawn.tag = "Selected";
+
+        foreach (GameObject i in SelectedPieces)
+        {
+            i.GetComponent<Renderer>().material.color = Color.yellow;
+        }
 
     }
 
@@ -57,47 +64,6 @@ public class HighlightScript : MonoBehaviour
         else if (pawn.tag == "Pawn")
         {
             isSelected = false;
-        }
-
-        if(pawn.tag != "Selected" && mouseIsOver != true )
-        {
-            Selected();
-        }
-
-    }
-
-    public void Selected()
-    {
-        foreach (GameObject i in SelectedPieces)
-        {
-            i.GetComponent<Renderer>().material.color = TeamColor;
-        }
-    
-            
-    }
-
-    public void SetSelected()
-    {
-        if (mouseIsOver != true)
-        {
-            if (tagSelected != null)
-            {
-                //tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
-                foreach (GameObject i in SelectedPieces)
-                {
-                    i.GetComponent<Renderer>().material.color = TeamColor;
-                }
-
-                tagSelected.tag = "Pawn";
-            }
-
-            pawn.tag = "Selected";
-
-            foreach (GameObject i in SelectedPieces)
-            {
-                i.GetComponent<Renderer>().material.color = Color.yellow;
-            }
-
         }
     }
 }
