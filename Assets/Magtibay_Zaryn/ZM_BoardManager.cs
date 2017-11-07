@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class ZM_BoardManager : MonoBehaviour {
 
-<<<<<<< HEAD
-     GameObject[,] Tiles = new GameObject [8,8];
-=======
-<<<<<<< HEAD
-    [SerializeField] GameObject[] Tiles;
-=======
     public GameObject[,] Tiles = new GameObject [8,8];
->>>>>>> ada16b81bed20346170aa521babb6e76ea57676d
->>>>>>> 937a197f314227b6f3f94770687612cb54a77e25
     private GameObject selectedTile;
     private JR_TilePositionScript tileLocationscript;
     private JR_CameraTileLocation cameraControl;
     private Vector3 positionOfTileSelected;
     public Camera Camera;
 
+    public Color brown;
+    public Color lightB;
+
+    public GameObject tile;
+
+    private GameObject pawn;
 
     // Use this for initialization
     void Start () {
         
         cameraControl = Camera.GetComponent<JR_CameraTileLocation>();
-    }
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    Tiles[i, j] = Instantiate(tile, new Vector3(i, 0, j), Quaternion.identity);
+                    if (i % 2 != 0 && j % 2 != 0 || i % 2 == 0 && j % 2 == 0)
+                    {
+                        Tiles[i, j].GetComponent<Renderer>().material.color = brown;
+                    }
+                    else
+                    {
+                        Tiles[i, j].GetComponent<Renderer>().material.color = lightB;
+                    }
+                }
+            }
+        }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,6 +53,12 @@ public class ZM_BoardManager : MonoBehaviour {
 
 	}
 
+    public void whatTileIsPawnOn(GameObject pawn) {
+        var x = pawn.transform.position.x;
+        var z = pawn.transform.position.z;
+        //return Tiles[(int)x, (int)z];
+    }
+
 
     // Accessor for Calling Gameobject after raycasthit
     public GameObject SelectedTile()
@@ -50,6 +69,10 @@ public class ZM_BoardManager : MonoBehaviour {
         {
             positionOfTileSelected = tileLocationscript.TilePosition();
             positionOfSelectedTile();
+        }
+        foreach (GameObject tile in Tiles) {
+            tile.transform.position = positionOfTileSelected;
+            return tile;
         }
         return selectedTile;
     }
@@ -66,3 +89,7 @@ public class ZM_BoardManager : MonoBehaviour {
 }
 
 //Editted by Jeremiah Rodriguez
+
+
+    //figure out how to tell what tile a pawn is on.
+    //return tile location to get a tile out of the array
