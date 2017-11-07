@@ -10,18 +10,22 @@ public class HighlightScript : MonoBehaviour
     GameObject[] SelectedPieces;
     GameObject tagSelected;
 
+    public bool isEnabled = true;
     public Color TeamColor;
     private bool isSelected = false;
     private bool mouseIsOver;
 
     private void OnMouseOver()
     {
-        mouseIsOver = true;
-        if (isSelected == false)
+        if (isEnabled)
         {
-            foreach (GameObject i in SelectedPieces)
+            mouseIsOver = true;
+            if (isSelected == false)
             {
-                i.GetComponent<Renderer>().material.color = Color.yellow;
+                foreach (GameObject i in SelectedPieces)
+                {
+                    i.GetComponent<Renderer>().material.color = Color.yellow;
+                }
             }
         }
 
@@ -29,23 +33,28 @@ public class HighlightScript : MonoBehaviour
     
     private void OnMouseExit()
     {
-        mouseIsOver = false;
-        if (isSelected == false)
+        if (isEnabled)
         {
-            foreach (GameObject i in SelectedPieces)
+            mouseIsOver = false;
+            if (isSelected == false)
             {
-                i.GetComponent<Renderer>().material.color = TeamColor;
+                foreach (GameObject i in SelectedPieces)
+                {
+                    i.GetComponent<Renderer>().material.color = TeamColor;
+                }
             }
         }
     }
     
     private void OnMouseDown()
     {
-        tagSelected = GameObject.FindGameObjectWithTag("Selected");
-        mouseIsOver = false;
-        Selected();
-        SetSelected();
-
+        if (isEnabled)
+        {
+            tagSelected = GameObject.FindGameObjectWithTag("Selected");
+            mouseIsOver = false;
+            Selected();
+            SetSelected();
+        }
     }
 
     void Update()
