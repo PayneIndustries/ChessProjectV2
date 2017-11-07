@@ -12,10 +12,13 @@ public class JR_BasePawn : MonoBehaviour
     private GameObject targetedSquare;
     private JR_TilePositionScript movementCheck;
 
+    [SerializeField]public Vector3 startPosition;
+    private ZM_BoardManager board;
+
     // Use this for initialization
     void Start()
     {
-
+        currentPawn.transform.position = new Vector3 (startPosition.x,0.5f,startPosition.z);
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
 
@@ -61,3 +64,6 @@ public class JR_BasePawn : MonoBehaviour
 //                References:
 //                        Links:
 //*/
+
+
+    //Edited by Zaryn Magtibay
