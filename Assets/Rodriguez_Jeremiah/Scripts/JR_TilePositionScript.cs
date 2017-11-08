@@ -11,6 +11,7 @@ public class JR_TilePositionScript : MonoBehaviour {
     private ZM_BoardManager boardManager;
 
 
+
 	// Use this for initialization
 	void Start () {
 
@@ -85,6 +86,7 @@ public class JR_TilePositionScript : MonoBehaviour {
             thisTile.tag = "tile";
         }
     }
+    
 }
 
 /*        

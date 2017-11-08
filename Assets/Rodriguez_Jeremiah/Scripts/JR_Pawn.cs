@@ -10,9 +10,10 @@ public class JR_Pawn : JR_BasePawn {
     GameObject pawnInZone;
     JR_BasePawn basePawn;
     public GameObject thisPawn;
-    public GameObject trigger;
-    private JR_OnTriggerEnter onTriggerEnter;
+    private GameObject enemyCheck;
     private int moveableActions;
+    private Color checkColorIdenity;
+    private HighlightScript highlight;
     
 
 
@@ -21,8 +22,9 @@ public class JR_Pawn : JR_BasePawn {
         base.Start();
         GameBoard = Board();
         Holder = Board().GetComponent<ZM_BoardManager>();
-        onTriggerEnter = trigger.GetComponent<JR_OnTriggerEnter>();
         isFirstMove = true;
+        highlight = thisPawn.GetComponent<HighlightScript>();
+
 
         if (isFirstMove)
         {
@@ -33,9 +35,12 @@ public class JR_Pawn : JR_BasePawn {
     private new void Update()
     {
         base.Update();
+        if(basePawn != null)
+        {
+
+        }
         if(thisPawn.tag == "Selected")
         {
-            trigger.layer = LayerMask.NameToLayer("Ignore Raycast");
             if (Input.GetButtonDown("Fire1"))
             {
                 CheckIfValid();
@@ -51,88 +56,137 @@ public class JR_Pawn : JR_BasePawn {
 
     public void CheckIfValid()
     {
-
-        //if (Holder.SelectedTile() != null)
-        // {                   
-           if (isFirstMove && moveableActions == 2)
+        if (isWhite)
+        {
+            if (isFirstMove && moveableActions == 2)
             {
-                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 2)
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 2)
                 {
                     moveableActions = 0;
                     PositionToMove();
                 }
 
-                else if(thisPawn.transform.position.x == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
+
+
                 }
 
-                
             }
-          else if (moveableActions == 1)
-           {
-              if (thisPawn.transform.position == new Vector3(thisPawn.transform.position.x, Holder.SelectedTile().transform.position.y, thisPawn.transform.position.z + 1))
-              {
-                  moveableActions = 0;
-                   PositionToMove();
-              }
-            }             
+            if (moveableActions == 1)
+            {
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+            }
 
+            else
+            {
+                MoveAndDestroy();
+            }
+
+        }
+
+        //IF the Pawn is Black
         else
         {
-         Debug.Log("Tile is Null");
-        }
-    }
-
-    public void IsThereAPawn()
-    {
-        if (onTriggerEnter.EnemyPawnCheck() != null)
-        {
-            if (onTriggerEnter.EnemyPawnCheck().tag == "pawn")
+            if (isFirstMove && moveableActions == 2)
             {
-                pawnInZone = onTriggerEnter.EnemyPawnCheck().gameObject;
-                basePawn = pawnInZone.GetComponent<JR_BasePawn>();
-
-                if (this.isWhite && basePawn.isWhite != true)
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 2)
                 {
-                    CanDestroy();
+                    moveableActions = 0;
+                    PositionToMove();
                 }
 
-                else if (this.isWhite != false && basePawn.isWhite)
+                else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
                 {
-                    CanDestroy();
+                    moveableActions = 0;
+                    PositionToMove();
                 }
 
-                else
+
+            }
+            else if (moveableActions == 1)
+            {
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
                 {
-                    basePawn = null;
+                    moveableActions = 0;
+                    PositionToMove();
                 }
             }
 
+            else
+            {
+                MoveAndDestroy();
+            }
         }
-    }
-
-    public void CanDestroy()
-    {
-        pawnInZone.GetComponent<Renderer>().material.color = Color.red;
-        MoveAndDestroy();
+        
     }
 
     public void MoveAndDestroy()
     {
-        if(Holder.SelectedTile().transform.position == new Vector3(this.transform.position.x - 1, this.transform.position.y, this.transform.position.z + 1)|| Holder.SelectedTile().transform.position == new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z + 1))
+        if (moveableActions > 0)
         {
-            OnDestroy();
+            if (isWhite)
+            {
+                if (thisPawn.transform.position.x + 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+
+                else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+                else if (thisPawn.transform.position.x == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+
+                else
+                {
+                    Debug.Log("That was not a legal move.");
+                }
+            }
+
+            else
+            {
+                if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+
+                else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+
+                else
+                {
+                    Debug.Log("That was not a legal move.");
+                }
+            }
         }
+        
     }
 
-    public void OnDestroy()
+    private void OnCollisionEnter(Collision collision)
     {
-        if(pawnInZone != null)
+        enemyCheck = collision.gameObject;
+        checkColorIdenity = enemyCheck.GetComponent<Renderer>().material.color;
+        if(collision.gameObject.tag == "pawn" && checkColorIdenity != this.GetComponent<Renderer>().material.color && checkColorIdenity != highlight.TeamColor)
         {
-            Destroy(pawnInZone);
-        }       
+            Destroy(enemyCheck);
+        }
     }
 
     public void PawnReset()
