@@ -42,7 +42,7 @@ public class ZM_BoardManager : MonoBehaviour {
             }
         }
 	
-	// Update is called once per frame
+	// Update is called once per frame.
 	void Update () {
 
         if (Input.GetButtonDown("Fire1"))

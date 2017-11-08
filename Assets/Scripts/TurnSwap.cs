@@ -24,33 +24,33 @@ public class TurnSwap : MonoBehaviour {
     //The function should only be called after a piece is moved
     public void SwapTurn()
     {
-        if (Input.GetKeyDown(KeyCode.S) && curPlayerWhite)
+        if (curPlayerWhite)
         {
-            foreach(GameObject i in whitePieces)
+            foreach (GameObject i in whitePieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = !enabled;
+                i.layer = LayerMask.NameToLayer("Default");
             }
 
-            foreach(GameObject i in blackPieces)
+            foreach (GameObject i in blackPieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = enabled;
+                i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
-
-            curPlayerWhite = false;
         }
-        else if (Input.GetKeyDown(KeyCode.S) && !curPlayerWhite)
+        else if (!curPlayerWhite)
         {
             foreach (GameObject i in whitePieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = enabled;
+                i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
 
             foreach (GameObject i in blackPieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = !enabled;
+                i.layer = LayerMask.NameToLayer("Default");
             }
-
-            curPlayerWhite = true;
         }
     }
 }
