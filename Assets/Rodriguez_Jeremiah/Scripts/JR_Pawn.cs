@@ -12,17 +12,22 @@ public class JR_Pawn : JR_BasePawn {
     public GameObject thisPawn;
     public GameObject trigger;
     private JR_OnTriggerEnter onTriggerEnter;
+    private int moveableActions;
     
 
 
     private new void Start()
     {
         base.Start();
-        isFirstMove = true;
         GameBoard = Board();
         Holder = Board().GetComponent<ZM_BoardManager>();
         onTriggerEnter = trigger.GetComponent<JR_OnTriggerEnter>();
-        
+        isFirstMove = true;
+
+        if (isFirstMove)
+        {
+            moveableActions = 2;
+        }      
     }
 
     private new void Update()
@@ -34,6 +39,7 @@ public class JR_Pawn : JR_BasePawn {
             if (Input.GetButtonDown("Fire1"))
             {
                 CheckIfValid();
+                Debug.Log("Am I being called");
             }
         }
 
@@ -45,22 +51,37 @@ public class JR_Pawn : JR_BasePawn {
 
     public void CheckIfValid()
     {
-        if (Holder.SelectedTile() != null)
-        {
-            if (isFirstMove && Holder.SelectedTile().transform.position == new Vector3(thisPawn.transform.position.x, thisPawn.transform.position.y, thisPawn.transform.position.z + 1) || Holder.SelectedTile().transform.position == new Vector3(thisPawn.transform.position.x, thisPawn.transform.position.y, thisPawn.transform.position.z + 2))
+
+        //if (Holder.SelectedTile() != null)
+        // {                   
+           if (isFirstMove && moveableActions == 2)
             {
-                PositionToMove();
-                isFirstMove = false;
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 2)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+
+                else if(thisPawn.transform.position.x == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                {
+                    moveableActions = 0;
+                    PositionToMove();
+                }
+
+                
             }
-           else if (Holder.SelectedTile().transform.position == new Vector3(thisPawn.transform.position.x, thisPawn.transform.position.y, thisPawn.transform.position.z + 1))
-            {
-               PositionToMove();
-            }
-        }
+          else if (moveableActions == 1)
+           {
+              if (thisPawn.transform.position == new Vector3(thisPawn.transform.position.x, Holder.SelectedTile().transform.position.y, thisPawn.transform.position.z + 1))
+              {
+                  moveableActions = 0;
+                   PositionToMove();
+              }
+            }             
 
         else
         {
-          Debug.Log("Tile is Null");
+         Debug.Log("Tile is Null");
         }
     }
 
@@ -112,6 +133,12 @@ public class JR_Pawn : JR_BasePawn {
         {
             Destroy(pawnInZone);
         }       
+    }
+
+    public void PawnReset()
+    {
+        moveableActions = 1;
+        isFirstMove = false;
     }
 }
 

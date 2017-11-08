@@ -20,7 +20,7 @@ public class JR_BasePawn : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
-        currentPawn.transform.position = new Vector3 (startPosition.x,0.5f,startPosition.z);
+        currentPawn.transform.position = new Vector3 (startPosition.x,startPosition.y,startPosition.z);
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
         board = BoardManager.GetComponent<ZM_BoardManager>();
@@ -39,7 +39,7 @@ public class JR_BasePawn : MonoBehaviour
             if (board.SelectedTile() != null && board.SelectedTile().tag != "Occupied")
             {
                 targetedSquare = board.SelectedTile();
-                newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 1, targetedSquare.transform.position.z);
+                newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 0.5f, targetedSquare.transform.position.z);
                 MovedPosition();
             }
 

@@ -7,6 +7,7 @@ public class JR_TilePositionScript : MonoBehaviour {
     public GameObject thisTile;
     private Vector3 tilePosition;
     private bool pawnHere;
+    public bool SelectedPawn;
     private ZM_BoardManager boardManager;
 
 
@@ -19,6 +20,7 @@ public class JR_TilePositionScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		
 	}
 
@@ -42,6 +44,18 @@ public class JR_TilePositionScript : MonoBehaviour {
         else
         {
             Debug.Log("The object that is inside me is not tagged!");
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+       if(other.tag == "Selected")
+        {
+            SelectedPawn = true;
+        }
+        else
+        {
+            SelectedPawn = false;
         }
     }
 
