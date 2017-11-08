@@ -87,6 +87,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Magtibay_Zaryn\PauseMenu\ButtonFunctions.cs" />
+    <Compile Include="Assets\Magtibay_Zaryn\PauseMenu\PauseMenu.cs" />
     <Compile Include="Assets\Magtibay_Zaryn\ZM_BoardManager.cs" />
     <Compile Include="Assets\Magtibay_Zaryn\ZM_PawnMovement.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\HighlightScript.cs" />
@@ -95,7 +97,6 @@
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_CameraTileLocation.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_King.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Knight.cs" />
-    <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_OnTriggerEnter.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Pawn.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Queen.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Rook.cs" />
