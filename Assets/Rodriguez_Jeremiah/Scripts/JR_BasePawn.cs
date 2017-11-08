@@ -12,32 +12,51 @@ public class JR_BasePawn : MonoBehaviour
     private GameObject targetedSquare;
     private JR_TilePositionScript movementCheck;
 
-    // Use this for initialization
-    void Start()
-    {
+    [SerializeField]public Vector3 startPosition;
+    private ZM_BoardManager board;
+    public GameObject BoardManager;
+    public bool isWhite;
 
+    // Use this for initialization
+    public void Start()
+    {
+        currentPawn.transform.position = new Vector3 (startPosition.x,startPosition.y,startPosition.z);
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
+        board = BoardManager.GetComponent<ZM_BoardManager>();
 
+    }
+
+    public void Update()
+    {
+        
     }
 
     public void PositionToMove()
     {
-        movementCheck = targetedSquare.GetComponent<JR_TilePositionScript>();
-        /*  if (movementCheck.pawnThere())
-          {
-              print("This is not a legal move!");
-          }
-      */
+        if (currentPawn.tag == "Selected")
+        {
+            if (board.SelectedTile() != null && board.SelectedTile().tag != "Occupied")
+            {
+                targetedSquare = board.SelectedTile();
+                newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 0.5f, targetedSquare.transform.position.z);
+                MovedPosition();
+            }
 
-        newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 1, targetedSquare.transform.position.z);
+            else if(board.SelectedTile() == null)
+            {
+                Debug.Log("Object instance 'board' not set");
+            }
+        }
     }
 
-    void MovedPosition()
+    public void MovedPosition()
     {
         if (currentPosition != newPosition)
         {
             currentPosition = newPosition;
+
+            currentPawn.transform.position = newPosition;
         }
     }
 
@@ -46,11 +65,11 @@ public class JR_BasePawn : MonoBehaviour
         return currentPosition;
     }
 
-    public void OnDestroy()
+    public GameObject Board()
     {
-        Destroy(gameObject);
+        return BoardManager;
     }
-    
+
 }
 
 /*        
@@ -61,3 +80,6 @@ public class JR_BasePawn : MonoBehaviour
 //                References:
 //                        Links:
 //*/
+
+
+    //Edited by Zaryn Magtibay

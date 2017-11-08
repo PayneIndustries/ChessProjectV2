@@ -11,7 +11,7 @@ public class CheckKing : MonoBehaviour {
 	}
 	bool CheckforKing (bool statement)
 	{
-		if (statement = true) {
+		if (statement == true) {
 			
 		} 
 		else {

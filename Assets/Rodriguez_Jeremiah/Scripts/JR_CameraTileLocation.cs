@@ -11,6 +11,7 @@ public class JR_CameraTileLocation : MonoBehaviour {
         RaycastHit hitInfo = new RaycastHit();
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo)) 
         {
+            
             tileCurrent = hitInfo.collider.gameObject;
         }
         return tileCurrent;

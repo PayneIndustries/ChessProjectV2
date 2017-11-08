@@ -20,3 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowToPlayScreen3.unity
     guid: b40fe777a940c314abc0faacfa21f0a8
+  - enabled: 1
+    path: Assets/Scenes/HowToPlayScreen4.unity
+    guid: 72cb334bee7e25d4c92e8ae476511ee8
+  - enabled: 1
+    path: Assets/Scenes/CreditsScreen.unity
+    guid: 18ae2b0f57072cd4095ee5fc3b983c7e

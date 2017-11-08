@@ -7,6 +7,7 @@ public class JR_TilePositionScript : MonoBehaviour {
     public GameObject thisTile;
     private Vector3 tilePosition;
     private bool pawnHere;
+    public bool SelectedPawn;
     private ZM_BoardManager boardManager;
 
 
@@ -19,6 +20,7 @@ public class JR_TilePositionScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		
 	}
 
@@ -34,7 +36,7 @@ public class JR_TilePositionScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Pawn")
+        if (other.tag == "Pawn" || other.tag == "Selected")
         {
             pawnHere = true;
             Occupied();
@@ -45,11 +47,24 @@ public class JR_TilePositionScript : MonoBehaviour {
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+       if(other.tag == "Selected")
+        {
+            SelectedPawn = true;
+        }
+        else
+        {
+            SelectedPawn = false;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Pawn")
+        if(other.tag == "Pawn" || other.tag == "Selected")
         {
             pawnHere = false;
+            Occupied();
         }
 
         else
@@ -63,6 +78,11 @@ public class JR_TilePositionScript : MonoBehaviour {
         if (pawnHere)
         {
             thisTile.tag = "Occupied";
+        }
+
+        else
+        {
+            thisTile.tag = "tile";
         }
     }
 }
