@@ -11,6 +11,7 @@ public class ZM_BoardManager : MonoBehaviour {
     private JR_CameraTileLocation cameraControl;
     private Vector3 positionOfTileSelected;
     public Camera Camera;
+    private Vector3 playerLocation;
 
     public Color brown;
     public Color lightB;
@@ -18,6 +19,7 @@ public class ZM_BoardManager : MonoBehaviour {
     public GameObject tile;
 
     private GameObject pawn;
+
 
     // Use this for initialization
     void Start () {
@@ -93,13 +95,7 @@ public class ZM_BoardManager : MonoBehaviour {
             }
 
             Debug.Log(selectedTile);
-
-        }
-
-        
-            //return tile;
-        //}
-
+        }       
         return selectedTile;
     }
 
