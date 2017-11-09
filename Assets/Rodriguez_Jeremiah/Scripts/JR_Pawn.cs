@@ -146,11 +146,11 @@ public class JR_Pawn : JR_BasePawn {
 
     public void MoveAndDestroy()
     {
-        if (moveableActions > 0)
+        if (moveableActions != 0)
         {
             if (isWhite)
             {
-                if (thisPawn.transform.position.x + 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
+               if (thisPawn.transform.position.x + 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();
@@ -163,7 +163,7 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
-                    // thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                     //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
                     highlight.StopHighlight();
                     PawnReset();
                 }
@@ -206,8 +206,8 @@ public class JR_Pawn : JR_BasePawn {
     private void OnCollisionEnter(Collision collision)
     {
         enemyCheck = collision.gameObject;
-        checkColorIdenity = enemyCheck.GetComponent<Renderer>().material.color;
-        if(collision.gameObject.tag == "pawn" && checkColorIdenity != this.GetComponent<Renderer>().material.color && checkColorIdenity != highlight.TeamColor)
+        checkColorIdenity = enemyCheck.GetComponentInChildren<Renderer>().material.color;
+        if(collision.gameObject.tag == "pawn" && checkColorIdenity != this.GetComponentInChildren<Renderer>().material.color && checkColorIdenity != highlight.TeamColor)
         {
             Destroy(enemyCheck);
             //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
