@@ -25,7 +25,7 @@ public class JR_BasePawn : MonoBehaviour
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
         board = BoardManager.GetComponent<ZM_BoardManager>();
-
+        turnSwap = BoardManager.GetComponent<TurnSwap>();
     }
 
     public void Update()
@@ -40,11 +40,12 @@ public class JR_BasePawn : MonoBehaviour
             if (board.SelectedTile() != null && board.SelectedTile().tag != "Occupied")
             {
                 targetedSquare = board.SelectedTile();
-                newPosition = new Vector3(targetedSquare.transform.position.x, targetedSquare.transform.position.y + 0.5f, targetedSquare.transform.position.z);
+                newPosition = new Vector3(targetedSquare.transform.position.x,0.5f, targetedSquare.transform.position.z);
                 MovedPosition();
+                
             }
-
-            else if(board.SelectedTile() == null)
+            
+            else if (board.SelectedTile() == null)
             {
                 Debug.Log("Object instance 'board' not set");
             }
@@ -60,6 +61,7 @@ public class JR_BasePawn : MonoBehaviour
             currentPawn.transform.position = newPosition;
 
             turnSwap.curPlayerWhite = !turnSwap.curPlayerWhite;
+            
         }
     }
 
@@ -71,6 +73,21 @@ public class JR_BasePawn : MonoBehaviour
     public GameObject Board()
     {
         return BoardManager;
+    }
+
+    protected void movementUnhiglight()
+    {
+        foreach (GameObject tile in board.Tiles)
+        {
+            if (tile.transform.position.z % 2 != 0 && tile.transform.position.x % 2 != 0 || tile.transform.position.z % 2 == 0 && tile.transform.position.x % 2 == 0)
+            {
+                tile.GetComponent<Renderer>().material.color = board.brown;
+            }
+            else
+            {
+                tile.GetComponent<Renderer>().material.color = board.lightB;
+            }
+        }
     }
 
 }

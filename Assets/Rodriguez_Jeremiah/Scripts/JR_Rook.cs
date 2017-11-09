@@ -35,38 +35,23 @@ public class JR_Rook : JR_BasePawn {
         }
         else
         {
-            rookMovementUnhiglight();
+            movementUnhiglight();
         }
-            //thisPawn.layer = LayerMask.NameToLayer("Default");
     }
 
     void checkMovement() {
-        if (Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z || Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x) {
+        if (Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z && Holder.SelectedTile().tag != "Occupied" || Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().tag != "Occupied") {
             PositionToMove();
-            rookMovementUnhiglight();
+            movementUnhiglight();
         }
     }
 
     void rookMovementHighlight() {
         foreach (GameObject tile in Holder.Tiles)
         {
-            if (tile.transform.position.z == thisPawn.transform.position.z && tile.transform.position != tileThatPawnIsOn || tile.transform.position.x == thisPawn.transform.position.x && tile.transform.position != tileThatPawnIsOn)
+            if (tile.transform.position.z == thisPawn.transform.position.z && tile.transform.position != tileThatPawnIsOn && tile.tag != "Occupied" || tile.transform.position.x == thisPawn.transform.position.x && tile.transform.position != tileThatPawnIsOn && tile.tag != "Occupied")
             {
                 tile.GetComponent<Renderer>().material.color = Color.yellow;
-            }
-        }
-    }
-
-    void rookMovementUnhiglight() {
-        foreach (GameObject tile in Holder.Tiles)
-        {
-            if (tile.transform.position.z % 2 != 0 && tile.transform.position.x % 2 != 0 || tile.transform.position.z % 2 == 0 && tile.transform.position.x % 2 == 0)
-            {
-                tile.GetComponent<Renderer>().material.color = Holder.brown;
-            }
-            else
-            {
-                tile.GetComponent<Renderer>().material.color = Holder.lightB;
             }
         }
     }

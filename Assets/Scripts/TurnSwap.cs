@@ -17,7 +17,7 @@ public class TurnSwap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        SwapTurn();
+        
 	}
 
     //Change the  Input to just be when the function is called
@@ -28,13 +28,13 @@ public class TurnSwap : MonoBehaviour {
         {
             foreach (GameObject i in whitePieces)
             {
-                i.GetComponent<HighlightScript>().isEnabled = !enabled;
+                i.GetComponent<HighlightScript>().isEnabled = enabled;
                 i.layer = LayerMask.NameToLayer("Default");
             }
 
             foreach (GameObject i in blackPieces)
             {
-                i.GetComponent<HighlightScript>().isEnabled = enabled;
+                i.GetComponent<HighlightScript>().isEnabled = !enabled;
                 i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
         }
@@ -42,13 +42,13 @@ public class TurnSwap : MonoBehaviour {
         {
             foreach (GameObject i in whitePieces)
             {
-                i.GetComponent<HighlightScript>().isEnabled = enabled;
+                i.GetComponent<HighlightScript>().isEnabled = !enabled;
                 i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
 
             foreach (GameObject i in blackPieces)
             {
-                i.GetComponent<HighlightScript>().isEnabled = !enabled;
+                i.GetComponent<HighlightScript>().isEnabled = enabled;
                 i.layer = LayerMask.NameToLayer("Default");
             }
         }

@@ -157,6 +157,10 @@ Prefab:
       propertyPath: BoardManager
       value: 
       objectReference: {fileID: 958821805}
+    - target: {fileID: 1398523387270770, guid: 4f8bb10b73517fd4bb13635e7d542b74, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f8bb10b73517fd4bb13635e7d542b74, type: 2}
   m_IsPrefabParent: 0
@@ -240,6 +244,10 @@ Prefab:
     - target: {fileID: 4570566228832838, guid: 958da15b914873945b0050520f159106, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184356995103512, guid: 958da15b914873945b0050520f159106, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136364598268914152, guid: 958da15b914873945b0050520f159106, type: 2}
@@ -1279,6 +1287,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1588088150911180, guid: 112e0a7b4b7b11447aaec10bcfde3264,
     type: 2}
   m_PrefabInternal: {fileID: 1962371636}
+--- !u!114 &1902092540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902092539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01421995a7ac0c459afec4594e9ccaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 283706974}
+  currentPawn: {fileID: 1902092539}
+  startPosition: {x: 3, y: 0.5, z: 5}
+  BoardManager: {fileID: 958821805}
+  isWhite: 1
+  thisPawn: {fileID: 1902092539}
 --- !u!114 &1902092541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,22 +1324,6 @@ MonoBehaviour:
   - {fileID: 1044630647}
   isEnabled: 1
   TeamColor: {r: 1, g: 1, b: 1, a: 0}
---- !u!114 &1902092542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1902092539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c520c21ec5b53f468b553be3baa7ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: {fileID: 283706974}
-  currentPawn: {fileID: 1902092539}
-  startPosition: {x: 3, y: 0, z: 0}
-  BoardManager: {fileID: 958821805}
-  isWhite: 0
 --- !u!65 &1902092543
 BoxCollider:
   m_ObjectHideFlags: 0
