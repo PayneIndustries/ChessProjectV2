@@ -60,13 +60,13 @@ public class JR_Pawn : JR_BasePawn {
         {
             if (isFirstMove && moveableActions == 2)
             {
-                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 2)
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 2)
                 {
                     moveableActions = 0;
                     PositionToMove();
                 }
 
-                else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
+                else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
@@ -77,7 +77,7 @@ public class JR_Pawn : JR_BasePawn {
             }
             if (moveableActions == 1)
             {
-                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x  && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
@@ -96,13 +96,13 @@ public class JR_Pawn : JR_BasePawn {
         {
             if (isFirstMove && moveableActions == 2)
             {
-                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 2)
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x  && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 2)
                 {
                     moveableActions = 0;
                     PositionToMove();
                 }
 
-                else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
+                else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x  && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
@@ -112,7 +112,7 @@ public class JR_Pawn : JR_BasePawn {
             }
             else if (moveableActions == 1)
             {
-                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
+                if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x  && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
@@ -133,18 +133,13 @@ public class JR_Pawn : JR_BasePawn {
         {
             if (isWhite)
             {
-                if (thisPawn.transform.position.x + 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                if (thisPawn.transform.position.x + 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();
                 }
 
-                else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
-                {
-                    moveableActions = 0;
-                    PositionToMove();
-                }
-                else if (thisPawn.transform.position.x == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z)
+                else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();
@@ -158,13 +153,13 @@ public class JR_Pawn : JR_BasePawn {
 
             else
             {
-                if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z)
+                if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();
                 }
 
-                else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z)
+                else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();

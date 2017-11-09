@@ -57,6 +57,8 @@ public class JR_BasePawn : MonoBehaviour
             currentPosition = newPosition;
 
             currentPawn.transform.position = newPosition;
+
+            targetedSquare = null;
         }
     }
 
