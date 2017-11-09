@@ -512,6 +512,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1398523387270770, guid: 4f8bb10b73517fd4bb13635e7d542b74,
     type: 2}
   m_PrefabInternal: {fileID: 67985189}
+--- !u!114 &664800730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664800729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1e75f0bfee70746ba478891ea34735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 283706974}
+  currentPawn: {fileID: 664800729}
+  startPosition: {x: 5, y: 0, z: 5}
+  BoardManager: {fileID: 958821805}
+  isWhite: 0
+  thisPawn: {fileID: 664800729}
 --- !u!54 &664800731
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -560,22 +577,6 @@ MonoBehaviour:
   - {fileID: 669072911}
   isEnabled: 1
   TeamColor: {r: 1, g: 1, b: 1, a: 0}
---- !u!114 &664800734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 664800729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c520c21ec5b53f468b553be3baa7ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: {fileID: 283706974}
-  currentPawn: {fileID: 664800729}
-  startPosition: {x: 5, y: 0, z: 0}
-  BoardManager: {fileID: 958821805}
-  isWhite: 0
 --- !u!1 &669072911 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1461333339880822, guid: 4f8bb10b73517fd4bb13635e7d542b74,

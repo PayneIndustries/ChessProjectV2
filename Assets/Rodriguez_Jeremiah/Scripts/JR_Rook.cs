@@ -26,24 +26,48 @@ public class JR_Rook : JR_BasePawn {
         if (thisPawn.tag == "Selected")
         {
             tileThatPawnIsOn = Holder.whatTileIsPawnOn(thisPawn).transform.position;
-            foreach (GameObject tile in Holder.Tiles) {
-                if (tile.transform.position.z == thisPawn.transform.position.z || tile.transform.position.x == thisPawn.transform.position.x && tile.transform.position != tileThatPawnIsOn)
-                {
-                    tile.GetComponent<Renderer>().material.color = Color.yellow;
-                }
-                else {
-
-                }
-            }
+            rookMovementHighlight();
             if (Input.GetButtonDown("Fire1"))
             {
-                
+                checkMovement();
+                //rookMovementUnhiglight();
             }
         }
-
         else
         {
-            thisPawn.layer = LayerMask.NameToLayer("Default");
+            rookMovementUnhiglight();
+        }
+            //thisPawn.layer = LayerMask.NameToLayer("Default");
+    }
+
+    void checkMovement() {
+        if (Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z || Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x) {
+            PositionToMove();
+            rookMovementUnhiglight();
+        }
+    }
+
+    void rookMovementHighlight() {
+        foreach (GameObject tile in Holder.Tiles)
+        {
+            if (tile.transform.position.z == thisPawn.transform.position.z && tile.transform.position != tileThatPawnIsOn || tile.transform.position.x == thisPawn.transform.position.x && tile.transform.position != tileThatPawnIsOn)
+            {
+                tile.GetComponent<Renderer>().material.color = Color.yellow;
+            }
+        }
+    }
+
+    void rookMovementUnhiglight() {
+        foreach (GameObject tile in Holder.Tiles)
+        {
+            if (tile.transform.position.z % 2 != 0 && tile.transform.position.x % 2 != 0 || tile.transform.position.z % 2 == 0 && tile.transform.position.x % 2 == 0)
+            {
+                tile.GetComponent<Renderer>().material.color = Holder.brown;
+            }
+            else
+            {
+                tile.GetComponent<Renderer>().material.color = Holder.lightB;
+            }
         }
     }
 }
