@@ -16,6 +16,7 @@ public class JR_BasePawn : MonoBehaviour
     private ZM_BoardManager board;
     public GameObject BoardManager;
     public bool isWhite;
+    private TurnSwap turnSwap;
 
     // Use this for initialization
     public void Start()
@@ -57,6 +58,8 @@ public class JR_BasePawn : MonoBehaviour
             currentPosition = newPosition;
 
             currentPawn.transform.position = newPosition;
+
+            turnSwap.curPlayerWhite = !turnSwap.curPlayerWhite;
         }
     }
 
