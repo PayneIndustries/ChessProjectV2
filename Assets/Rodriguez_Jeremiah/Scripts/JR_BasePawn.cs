@@ -32,6 +32,10 @@ public class JR_BasePawn : MonoBehaviour
     {
         
     }
+    
+    public void FixedUpdate() {
+
+    }
 
     public void PositionToMove()
     {
