@@ -17,7 +17,11 @@ public class TurnSwap : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
+<<<<<<< HEAD
     }
+=======
+	}
+>>>>>>> ZarynBranch
 
     //Change the  Input to just be when the function is called
     //The function should only be called after a piece is moved
@@ -28,14 +32,20 @@ public class TurnSwap : MonoBehaviour {
             foreach (GameObject i in whitePieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = enabled;
+<<<<<<< HEAD
                 i.tag = "Pawn";
+=======
+>>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Default");
             }
 
             foreach (GameObject i in blackPieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = !enabled;
+<<<<<<< HEAD
                 i.tag = "Pawn";
+=======
+>>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
         }
@@ -44,14 +54,20 @@ public class TurnSwap : MonoBehaviour {
             foreach (GameObject i in whitePieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = !enabled;
+<<<<<<< HEAD
                 i.tag = "Pawn";
+=======
+>>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
 
             foreach (GameObject i in blackPieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = enabled;
+<<<<<<< HEAD
                 i.tag = "Pawn";
+=======
+>>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Default");
             }
         }

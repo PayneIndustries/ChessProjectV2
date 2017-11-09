@@ -12,9 +12,13 @@ public class JR_Pawn : JR_BasePawn {
     public GameObject thisPawn;
     private GameObject enemyCheck;
     private int moveableActions;
+<<<<<<< HEAD
     private Color checkColorIdenity;
     private HighlightScript highlight;
     
+=======
+
+>>>>>>> ZarynBranch
 
 
     private new void Start()
@@ -41,6 +45,11 @@ public class JR_Pawn : JR_BasePawn {
         }
         if(thisPawn.tag == "Selected")
         {
+<<<<<<< HEAD
+=======
+            pawnMovementHighlight();
+            trigger.layer = LayerMask.NameToLayer("Ignore Raycast");
+>>>>>>> ZarynBranch
             if (Input.GetButtonDown("Fire1"))
             {
                 CheckIfValid();
@@ -50,6 +59,7 @@ public class JR_Pawn : JR_BasePawn {
 
         else
         {
+            movementUnhiglight();
             thisPawn.layer = LayerMask.NameToLayer("Default");
         }
     }
@@ -141,7 +151,11 @@ public class JR_Pawn : JR_BasePawn {
                 MoveAndDestroy();
             }
         }
+<<<<<<< HEAD
         
+=======
+        movementUnhiglight();
+>>>>>>> ZarynBranch
     }
 
     public void MoveAndDestroy()
@@ -219,6 +233,27 @@ public class JR_Pawn : JR_BasePawn {
     {
         moveableActions = 1;
         isFirstMove = false;
+    }
+
+    void pawnMovementHighlight()
+    {
+        foreach (GameObject tile in Holder.Tiles)
+        {
+            if (isFirstMove) {
+                if (tile.transform.position.z == thisPawn.transform.position.z + 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                {
+                    tile.GetComponent<Renderer>().material.color = Color.yellow;
+                } else if (tile.transform.position.z == thisPawn.transform.position.z + 2 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied") {
+                    tile.GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+            else {
+                if (tile.transform.position.z == thisPawn.transform.position.z + 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                {
+                    tile.GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+        }
     }
 }
 
