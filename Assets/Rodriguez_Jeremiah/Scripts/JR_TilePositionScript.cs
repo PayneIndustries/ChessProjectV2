@@ -8,11 +8,13 @@ public class JR_TilePositionScript : MonoBehaviour {
     private Vector3 tilePosition;
     private bool pawnHere;
     private ZM_BoardManager boardManager;
+    private GameObject whoIsHere;
+    public bool validMove;
 
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         tilePosition = new Vector3(thisTile.transform.position.x, thisTile.transform.position.y, thisTile.transform.position.z);
 		
@@ -40,6 +42,7 @@ public class JR_TilePositionScript : MonoBehaviour {
         {
             pawnHere = true;
             Occupied();
+            whoIsHere = other.gameObject;
         }
     }
 
@@ -49,6 +52,7 @@ public class JR_TilePositionScript : MonoBehaviour {
         {
             pawnHere = false;
             Occupied();
+            whoIsHere = null;
         }
 
         else
@@ -68,6 +72,11 @@ public class JR_TilePositionScript : MonoBehaviour {
         {
             thisTile.tag = "tile";
         }
+    }
+
+    public GameObject WhoIsHere()
+    {
+        return whoIsHere;
     }
     
 }

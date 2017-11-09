@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TurnSwap : MonoBehaviour {
 
-    public GameObject[] whitePieces;
-    public GameObject[] blackPieces;
+    public List<GameObject> whitePieces;
+    public List<GameObject> blackPieces;
     public bool curPlayerWhite;
 
 	// Use this for initialization
@@ -14,14 +14,11 @@ public class TurnSwap : MonoBehaviour {
         curPlayerWhite = true;
         SwapTurn();
 	}
+	
 	// Update is called once per frame
 	void Update () {
         
-<<<<<<< HEAD
-    }
-=======
 	}
->>>>>>> ZarynBranch
 
     //Change the  Input to just be when the function is called
     //The function should only be called after a piece is moved
@@ -32,44 +29,34 @@ public class TurnSwap : MonoBehaviour {
             foreach (GameObject i in whitePieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = enabled;
-<<<<<<< HEAD
                 i.tag = "Pawn";
-=======
->>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Default");
             }
 
             foreach (GameObject i in blackPieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = !enabled;
-<<<<<<< HEAD
                 i.tag = "Pawn";
-=======
->>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
+
         }
         else if (!curPlayerWhite)
         {
             foreach (GameObject i in whitePieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = !enabled;
-<<<<<<< HEAD
                 i.tag = "Pawn";
-=======
->>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
 
             foreach (GameObject i in blackPieces)
             {
                 i.GetComponent<HighlightScript>().isEnabled = enabled;
-<<<<<<< HEAD
                 i.tag = "Pawn";
-=======
->>>>>>> ZarynBranch
                 i.layer = LayerMask.NameToLayer("Default");
             }
         }
+
     }
 }

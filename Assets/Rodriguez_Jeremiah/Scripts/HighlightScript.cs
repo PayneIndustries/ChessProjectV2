@@ -115,4 +115,9 @@ public class HighlightScript : MonoBehaviour
         }
 
     }
+
+    public bool IsSelected()
+    {
+        return isSelected;
+    }
 }

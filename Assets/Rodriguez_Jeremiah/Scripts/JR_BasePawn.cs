@@ -17,6 +17,7 @@ public class JR_BasePawn : MonoBehaviour
     public GameObject BoardManager;
     public bool isWhite;
     private TurnSwap turnSwap;
+    private HighlightScript setColor;
 
     // Use this for initialization
     public void Start()
@@ -25,12 +26,17 @@ public class JR_BasePawn : MonoBehaviour
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
         board = BoardManager.GetComponent<ZM_BoardManager>();
-<<<<<<< HEAD
         turnSwap = Controller.GetComponent<TurnSwap>();
+        setColor = currentPawn.GetComponent<HighlightScript>();
 
-=======
-        turnSwap = BoardManager.GetComponent<TurnSwap>();
->>>>>>> ZarynBranch
+        if (isWhite)
+        {
+            setColor.TeamColor = Color.white;
+        }
+        else
+        {
+            setColor.TeamColor = Color.black;
+        }
     }
 
     public void Update()
@@ -72,12 +78,11 @@ public class JR_BasePawn : MonoBehaviour
             targetedSquare = null;
 
             turnSwap.curPlayerWhite = !turnSwap.curPlayerWhite;
-<<<<<<< HEAD
 
             turnSwap.SwapTurn();
-=======
+
+            board.SelectedTileToNull();
             
->>>>>>> ZarynBranch
         }
     }
 
@@ -103,6 +108,19 @@ public class JR_BasePawn : MonoBehaviour
             {
                 tile.GetComponent<Renderer>().material.color = board.lightB;
             }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (isWhite)
+        {
+            //remove from white array
+            FindObjectOfType<TurnSwap>().whitePieces.Remove(this.gameObject);
+        } else
+        {
+            //remove from black array
+            FindObjectOfType<TurnSwap>().blackPieces.Remove(this.gameObject);
         }
     }
 

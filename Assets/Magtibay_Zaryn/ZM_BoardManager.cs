@@ -19,6 +19,8 @@ public class ZM_BoardManager : MonoBehaviour {
     public GameObject tile;
 
     private GameObject pawn;
+    private GameObject whoisthereinfo;
+    private bool playerDestroyBlack;
 
 
     // Use this for initialization
@@ -80,7 +82,6 @@ public class ZM_BoardManager : MonoBehaviour {
 
         if (selectedTile == null)
         {
-            Debug.Log("I am not a tile!");
             selectedTile = cameraControl.getObject();
         }
 
@@ -93,8 +94,6 @@ public class ZM_BoardManager : MonoBehaviour {
                 positionOfTileSelected = tileLocationscript.TilePosition();
                 PositionOfSelectedTile();
             }
-
-            Debug.Log(selectedTile);
         }       
         return selectedTile;
     }
@@ -103,11 +102,46 @@ public class ZM_BoardManager : MonoBehaviour {
     {
         if (positionOfTileSelected != null)
         {
-            Debug.Log(positionOfTileSelected);
         }
         return positionOfTileSelected;
         
     }
+
+    public GameObject WHOISTHERE()
+    {
+        whoisthereinfo = tileLocationscript.WhoIsHere();
+        JR_BasePawn blackCheck = whoisthereinfo.GetComponent<JR_BasePawn>();
+        if(blackCheck.isWhite == true)
+        {
+            BlackCheckSetTrue();
+        }
+        return whoisthereinfo;
+    }
+
+    public bool WhoIsThere2()
+    {
+        GameObject info = WHOISTHERE();
+        JR_BasePawn pawn = info.GetComponent<JR_BasePawn>();
+        return pawn.isWhite;
+
+    }
+
+    public void SelectedTileToNull()
+    {
+        selectedTile = null;
+    }
+
+    public bool BlackCheckSetTrue()
+    {
+        playerDestroyBlack = true;
+        return playerDestroyBlack;
+    }
+
+    public void BlackCheckSetFalse()
+    {
+        playerDestroyBlack = false;
+    }
+        
 }
 
 //Editted by Jeremiah Rodriguez
