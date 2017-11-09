@@ -17,6 +17,61 @@ public class JR_King : JR_BasePawn {
     public new void Start()
     { 
         base.Start();
+        GameBoard = Board();
+        Holder = Board().GetComponent<ZM_BoardManager>();
     }
 
+    private new void FixedUpdate()
+    {
+        
+    }
+
+    void checkMovement()
+    {
+
+    }
+
+    void kingMovementHighlight()
+    {
+
+    }
+
+    void horizontalUpMovement()
+    {
+
+    }
+
+    void horizontalDownMovement()
+    {
+
+    }
+
+    void verticalUpMovement()
+    {
+
+    }
+
+    void verticalDownMovement()
+    {
+
+    }
+
+    void checkUL()
+    {
+
+    }
+
+    void checkUR()
+    {
+
+    }
+    void checkLL()
+    {
+
+    }
+
+    void checkLR()
+    {
+
+    }
 }
