@@ -80,7 +80,12 @@ public class JR_Pawn : JR_BasePawn {
 
                 }
 
-            } else
+                else
+                {
+                    MoveAndDestroy();
+                }
+            }
+            else
             if (moveableActions == 1)
             {
                 if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1 && Holder.SelectedTile().tag != "Occupied")
@@ -121,6 +126,10 @@ public class JR_Pawn : JR_BasePawn {
                     PawnReset();
                 }
 
+                else
+                {
+                    MoveAndDestroy();
+                }
 
             }
             else if (moveableActions == 1)
@@ -217,7 +226,7 @@ public class JR_Pawn : JR_BasePawn {
     public bool CanDestroy()
     {
         //if (thisPawn.transform.position.x - 1 < 0 || thisPawn.transform.position.z - 1 < 0 || thisPawn.transform.position.x + 1 > 7 || thisPawn.transform.position.z + 1 > 7)
-            //return false;
+           // return false;
 
         if (isWhite)
         { 

@@ -3244,6 +3244,7 @@ MonoBehaviour:
   startPosition: {x: 4, y: 0.5, z: 7}
   BoardManager: {fileID: 958821805}
   isWhite: 0
+  thisPawn: {fileID: 0}
 --- !u!114 &982613379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5567,6 +5568,7 @@ MonoBehaviour:
   startPosition: {x: 4, y: 0.5, z: 0}
   BoardManager: {fileID: 958821805}
   isWhite: 1
+  thisPawn: {fileID: 0}
 --- !u!114 &1600782243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5778,7 +5780,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636547350}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2, y: 10, z: 2.5}
+  m_LocalPosition: {x: 3, y: 10, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

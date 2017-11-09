@@ -116,11 +116,11 @@ public class JR_BasePawn : MonoBehaviour
         if (isWhite)
         {
             //remove from white array
-            FindObjectOfType<TurnSwap>().whitePieces.Remove(this.gameObject);
+            turnSwap.whitePieces.Remove(currentPawn);
         } else
         {
             //remove from black array
-            FindObjectOfType<TurnSwap>().blackPieces.Remove(this.gameObject);
+            turnSwap.blackPieces.Remove(currentPawn);
         }
     }
 
