@@ -7,7 +7,6 @@ public class JR_TilePositionScript : MonoBehaviour {
     public GameObject thisTile;
     private Vector3 tilePosition;
     private bool pawnHere;
-    public bool SelectedPawn;
     private ZM_BoardManager boardManager;
 
 
@@ -35,28 +34,12 @@ public class JR_TilePositionScript : MonoBehaviour {
         return pawnHere;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Pawn" || other.tag == "Selected")
+       if(other.tag == "Selected" || other.tag == "Pawn")
         {
             pawnHere = true;
             Occupied();
-        }
-        else
-        {
-            Debug.Log("The object that is inside me is not tagged!");
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-       if(other.tag == "Selected")
-        {
-            SelectedPawn = true;
-        }
-        else
-        {
-            SelectedPawn = false;
         }
     }
 

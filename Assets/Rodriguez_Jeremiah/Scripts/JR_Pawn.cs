@@ -64,13 +64,18 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    // thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
                 else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
-
+                    //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
 
                 }
 
@@ -81,6 +86,9 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
             }
 
@@ -100,12 +108,18 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    // thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
                 else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x  && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    // thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
 
@@ -116,6 +130,9 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
             }
 
@@ -137,12 +154,18 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
                 else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z + 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    // thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
                 else
@@ -157,12 +180,18 @@ public class JR_Pawn : JR_BasePawn {
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
                 else if (thisPawn.transform.position.x - 1 == Holder.SelectedTile().transform.position.x && thisPawn.transform.position.z - 1 == Holder.SelectedTile().transform.position.z && Holder.SelectedTile().tag == "Occupied")
                 {
                     moveableActions = 0;
                     PositionToMove();
+                    // thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+                    highlight.StopHighlight();
+                    PawnReset();
                 }
 
                 else
@@ -181,6 +210,8 @@ public class JR_Pawn : JR_BasePawn {
         if(collision.gameObject.tag == "pawn" && checkColorIdenity != this.GetComponent<Renderer>().material.color && checkColorIdenity != highlight.TeamColor)
         {
             Destroy(enemyCheck);
+            //thisPawn.GetComponent<Renderer>().material.color = highlight.TeamColor;
+            highlight.StopHighlight();
         }
     }
 

@@ -87,8 +87,6 @@ public class HighlightScript : MonoBehaviour
 
     public void SetSelected()
     {
-        if (mouseIsOver != true)
-        {
             if (tagSelected != null)
             {
                 //tagSelected.GetComponentInChildren<Renderer>().material.color = TeamColor;
@@ -107,6 +105,14 @@ public class HighlightScript : MonoBehaviour
                 i.GetComponent<Renderer>().material.color = Color.yellow;
             }
 
+    }
+
+    public void StopHighlight()
+    {
+        foreach (GameObject i in SelectedPieces)
+        {
+            i.GetComponent<Renderer>().material.color = TeamColor;
         }
+
     }
 }
