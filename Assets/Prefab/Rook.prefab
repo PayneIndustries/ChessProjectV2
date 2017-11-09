@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4729387434280720}
   - component: {fileID: 33304838551546446}
-  - component: {fileID: 65610571361948864}
   - component: {fileID: 23242974728395610}
   m_Layer: 0
   m_Name: Cube (1)
@@ -38,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4667420134900510}
   - component: {fileID: 33372559989963160}
-  - component: {fileID: 136277670676519998}
   - component: {fileID: 23287065801820138}
+  - component: {fileID: 114890480707066216}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -55,9 +54,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4442275158379042}
+  - component: {fileID: 54736362389921232}
+  - component: {fileID: 65804699219919424}
+  - component: {fileID: 114308123396687458}
+  - component: {fileID: 114997923030141660}
   m_Layer: 0
   m_Name: Rook
-  m_TagString: Untagged
+  m_TagString: Pawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +74,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4866380532060174}
   - component: {fileID: 33473333163934104}
-  - component: {fileID: 65699157385995210}
   - component: {fileID: 23326924599292594}
   m_Layer: 0
   m_Name: Cube (4)
@@ -89,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4298468723468650}
   - component: {fileID: 33759572839999988}
-  - component: {fileID: 65399031293424720}
   - component: {fileID: 23575444493058006}
   m_Layer: 0
   m_Name: Cube
@@ -107,7 +108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4880390462276040}
   - component: {fileID: 33652811625495966}
-  - component: {fileID: 65840429752408538}
   - component: {fileID: 23320254425990026}
   m_Layer: 0
   m_Name: Cube (2)
@@ -125,7 +125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4233902943059920}
   - component: {fileID: 33400679896308034}
-  - component: {fileID: 65832962334614554}
   - component: {fileID: 23902398874054506}
   m_Layer: 0
   m_Name: Cube (3)
@@ -167,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398523387270770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.28, y: 0.5, z: 9.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4298468723468650}
@@ -465,76 +464,83 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472826165146930}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65399031293424720
+--- !u!54 &54736362389921232
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398523387270770}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!65 &65804699219919424
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1472826165146930}
+  m_GameObject: {fileID: 1398523387270770}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65610571361948864
-BoxCollider:
+  m_Size: {x: 1, y: 1.2729455, z: 1}
+  m_Center: {x: 0, y: 0.63647276, z: 0}
+--- !u!114 &114308123396687458
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1182732882064482}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1398523387270770}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65699157385995210
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1461333339880822}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65832962334614554
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1884921422865126}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65840429752408538
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852182320777328}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136277670676519998
-CapsuleCollider:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1e75f0bfee70746ba478891ea34735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
+  currentPawn: {fileID: 1398523387270770}
+  startPosition: {x: 5, y: 0, z: 5}
+  BoardManager: {fileID: 0}
+  isWhite: 0
+  thisPawn: {fileID: 1398523387270770}
+--- !u!114 &114890480707066216
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285205678550266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5ca7ecb2b21b14da9f3298f5f2a9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 1398523387270770}
+  SelectedPieces: []
+  isEnabled: 1
+  TeamColor: {r: 1, g: 0.88965523, b: 0, a: 0}
+--- !u!114 &114997923030141660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398523387270770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5ca7ecb2b21b14da9f3298f5f2a9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 1398523387270770}
+  SelectedPieces:
+  - {fileID: 1472826165146930}
+  - {fileID: 1285205678550266}
+  - {fileID: 1182732882064482}
+  - {fileID: 1852182320777328}
+  - {fileID: 1884921422865126}
+  - {fileID: 1461333339880822}
+  isEnabled: 1
+  TeamColor: {r: 1, g: 1, b: 1, a: 0}
