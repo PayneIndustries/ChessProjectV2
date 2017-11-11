@@ -79,9 +79,6 @@
      <Compile Include="Assets\Scripts\PawnPromotion.cs" />
      <Compile Include="Assets\Scripts\QuitSceneManager.cs" />
      <Compile Include="Assets\Scripts\TurnSwap.cs" />
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/gamef/Documents/GitHub/ChessProjectV2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/UE_4.17/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

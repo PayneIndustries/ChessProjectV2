@@ -16,6 +16,14 @@ public class JR_BasePawn : MonoBehaviour
 //                        
 //*/
 
+	//     	Developer Name: Zaryn Magtibay
+	//     	Contribution: I only added in a public variable that places each piece where it needs to be on the board, and I
+	//     	created the "movementUnhightlight" method that unhiglights each tile after a piece moves.
+	//     	Feature : Tile Unhighlight.
+	//     	Start & End dates : 10/05/17 - 11/10/17
+	//            	References: No references were used
+	//                    	Links: NA
+
     public GameObject Controller;
     public GameObject currentPawn;
     private Vector3 currentPosition;

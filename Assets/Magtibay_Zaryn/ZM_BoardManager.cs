@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//     	Developer Name: Zaryn Magtibay
+//     	Contribution: In start, I wrote the code for instantiating the board and placing each tile into the "Tiles" 2D array.
+//     	Feature : Board is created on start, the 2D array is filled with the tiles of the Board. Also, working with Jeremiah, we made the different accessors in this script that helps send information about the tile/ pawn location.
+//     	Start & End dates : 10/28/17 - 11/10/17
+//            	References: No references were used
+//                    	Links: NA
+
 public class ZM_BoardManager : MonoBehaviour {
 
     //         Developer Name: Jeremiah Rodriguez

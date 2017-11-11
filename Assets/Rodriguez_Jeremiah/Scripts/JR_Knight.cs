@@ -12,6 +12,15 @@ public class JR_Knight : JR_BasePawn {
     //                        Links: NA
 
 
+
+	//     	Developer Name: Zaryn Magtibay
+	//     	Contribution: With the help of Jeremiah and Alex Dangler, I worked on the logic of the knights movement. I also implemented its respective tile path highlight.
+	//     	Feature : Knight movement and tile highlight.
+	//     	Start & End dates : 11/09/17 - 11/10/17
+	//            	References: No references were used
+	//       
+
+
     GameObject GameBoard;
     public GameObject thisPawn;
 

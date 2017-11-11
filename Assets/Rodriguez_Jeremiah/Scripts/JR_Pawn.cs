@@ -11,6 +11,15 @@ public class JR_Pawn : JR_BasePawn {
     //                References: No references were used
     //                        Links: NA
 
+
+
+	//     	Developer Name: Zaryn Magtibay
+	//     	Contribution: I helped write the logic in the pawns movement. Also I created tile highlight for its path.
+	//     	Feature : Pawn Movement and tile highlight.
+	//	     Start & End dates : 11/01/17 - 11/10/17
+	//            	References: No references were used
+	//        
+
     GameObject GameBoard;
     private ZM_BoardManager Holder;
     private bool isFirstMove;

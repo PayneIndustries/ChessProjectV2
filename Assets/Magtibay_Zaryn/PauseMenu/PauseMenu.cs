@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//     	Developer Name: Zaryn Magtibay
+//     	Contribution: I created the functionality of this pause menu. When the pause menu is activated, time in unity is stopped.
+//     	Feature : Pause Menu
+//     	Start & End dates : 11/07/17 - 11/07/17
+//            	References: No references were used
+//                    	Links: NA
+
 public class PauseMenu : MonoBehaviour {
     public Transform canvas;
 	// Use this for initialization

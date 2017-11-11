@@ -11,6 +11,18 @@ public class JR_Queen : JR_BasePawn {
     //                References: No references were used
     //                        Links: NA
 
+
+
+
+
+	//     	Developer Name: Zaryn Magtibay
+	//     	Contribution: I worked on the logic of the Queens movement. I also implemented its respective tile path highlight.
+	//     	Feature : Queen movement and tile highlight.
+	//     	Start & End dates : 11/07/17 - 11/10/17
+	//            	References: No references were used
+	//      	              Links: NA
+
+
     GameObject GameBoard;
     public GameObject thisPawn;
 

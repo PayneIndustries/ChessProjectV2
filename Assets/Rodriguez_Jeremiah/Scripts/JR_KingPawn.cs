@@ -13,6 +13,13 @@ public class JR_KingPawn : JR_BasePawn
     //                        Links: NA
 
 
+	//     	Developer Name: Zaryn Magtibay
+	//     	Contribution: I helped create the logic in the Kings movement, and I also created it's tile highlight.
+	//     	Feature : King movement and its tile highlight.
+	//     	Start & End dates : 11/07/17 - 11/10/17
+	//            	References: No references were used
+	//                    	Links: NA
+
     GameObject GameBoard;
     private ZM_BoardManager Holder;
     public GameObject thisPawn;

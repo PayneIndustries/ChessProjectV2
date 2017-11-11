@@ -13,6 +13,15 @@ public class JR_Rook : JR_BasePawn {
     //                        Links: NA
 
 
+	//     	Developer Name: Zaryn Magtibay
+	//     	Contribution: I worked on the logic of the rooks movement. I also implemented its respective tile path highlight.
+	//     	Feature : Rook movement and tile highlight.
+	//     	Start & End dates : 11/07/17 - 11/10/17
+	//            	References: No references were used
+	//                    	Links: NA
+
+
+
     GameObject GameBoard;
     private ZM_BoardManager Holder;
 
