@@ -2,6 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*        
+ *        Assisted Ryan Wilson.
+//        Developer Name: Jeremiah Rodriguez
+//         Contribution: Highlight Script for all pawns in the scene.
+//         Feature : This script handles all the OnMouse Commands and eddited the script.
+//         Start & End dates : 10/28/17 - 11/6/17
+    //                References: No references were used
+    //                        Links: NA
+
+
+    /*
+//        Developer Name: Ryan Wilson
+//         Contribution:
+//                Units are tagged as selected and highlighted a different color when they are clicked on.
+                  If there is already a selected unit, then the currently selected one is deselected.
+//                11/3/17 - 11/5/17
+//                
+//                                      
+//*/
+
 public class HighlightScript : MonoBehaviour
 { 
     public GameObject pawn;

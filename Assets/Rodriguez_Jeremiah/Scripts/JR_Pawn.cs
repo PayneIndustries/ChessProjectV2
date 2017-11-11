@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class JR_Pawn : JR_BasePawn {
 
+    //         Developer Name: Jeremiah Rodriguez
+    //         Contribution: I wrote the Pawn script. This script is designed to manage the pawns on the board.
+    //         Feature : This is the pawn. It functions like a normal pawn in chess.
+    //         Start & End dates : 10/30/17 - 11/10/17 
+    //                References: No references were used
+    //                        Links: NA
+
     GameObject GameBoard;
     private ZM_BoardManager Holder;
     private bool isFirstMove;
@@ -51,7 +58,7 @@ public class JR_Pawn : JR_BasePawn {
 
         else
         {
-            movementUnhiglight();
+            //movementUnhiglight();
         }
     }
 
@@ -172,7 +179,7 @@ public class JR_Pawn : JR_BasePawn {
             {
                 Debug.Log(Holder.SelectedTile().tag);
                 Debug.Log(Holder.WhoIsThere2());
-                if (CanDestroy() && Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() == Holder.BlackCheckSetTrue())
+                if (CanDestroy() && Holder.SelectedTile().tag == "Occupied" && Holder.BlackCheckSetTrue())
                 {
                     Destroy(Holder.WHOISTHERE());
                     Holder.SelectedTile().tag = "tile";
@@ -200,7 +207,7 @@ public class JR_Pawn : JR_BasePawn {
 
     void pawnMovementHighlight()
     {
-        foreach (GameObject tile in Holder.Tiles)
+       /* foreach (GameObject tile in Holder.Tiles)
         {
             if (isFirstMove)
             {
@@ -220,7 +227,7 @@ public class JR_Pawn : JR_BasePawn {
                     tile.GetComponent<Renderer>().material.color = Color.yellow;
                 }
             }
-        }
+        }*/
     }
 
     public bool CanDestroy()
@@ -245,12 +252,12 @@ public class JR_Pawn : JR_BasePawn {
             if(Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
             {
                 canDestroyPawn = true;
-                Debug.Log("Am I being called?");
+
             }
             else if(Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
             {
                 canDestroyPawn = true;
-                Debug.Log("Am I being called?");
+
             }
         }
         return canDestroyPawn;

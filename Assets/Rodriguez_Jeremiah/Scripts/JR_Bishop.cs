@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class JR_Bishop : JR_BasePawn {
 
+    /*        
+//         Developer Name: Jeremiah Rodriguez
+//         Contribution: I worked with Zaryn on creating this script as well as getting functionality to it.
+//         Feature : The bishop is a pawn that needs to be used for chess that has the ability to move in diagonal directions on color.
+//         Start & End dates : 11/08/17 - 11/10/17
+    //                References: No references were used
+    //                        Links: NA
+
+//              
+//                        
+//*/
+
     GameObject GameBoard;
     public GameObject thisPawn;
 
@@ -14,19 +26,21 @@ public class JR_Bishop : JR_BasePawn {
     private int moveableActions;
     private Vector3 tileThatPawnIsOn;
     int x, z;
+    private List<GameObject> MoveableTiles;
 
     private new void Start()
     {
-        base.Start();
+            base.Start();
+        basePawn = thisPawnScript;
         GameBoard = Board();
-        Holder = Board().GetComponent<ZM_BoardManager>();
+            Holder = Board().GetComponent<ZM_BoardManager>();
     }
 
     private new void FixedUpdate()
     {
         if (thisPawn.tag == "Selected")
         {
-            tileThatPawnIsOn = Holder.whatTileIsPawnOn(thisPawn).transform.position;
+           // tileThatPawnIsOn = Holder.whatTileIsPawnOn(thisPawn).transform.position;
             bishopMovementHighlight();
 
             if (Input.GetButtonDown("Fire1"))
@@ -36,16 +50,46 @@ public class JR_Bishop : JR_BasePawn {
         }
         else
         {
-            movementUnhiglight();
+          //movementUnhiglight();
         }
     }
 
     void checkMovement()
     {
-        if (Holder.SelectedTile().GetComponent<JR_TilePositionScript>().validMove == true && Holder.SelectedTile().tag != "Occupied")
+        if (Holder.SelectedTile().tag != "Occupied" && Holder.SelectedTile().GetComponent<JR_TilePositionScript>().validMove == true)
         {
             PositionToMove();
-            movementUnhiglight();
+           // MoveableTiles.Clear();
+            // movementUnhiglight();
+        }
+
+
+        else if (isWhite && Holder.WHOISTHERE() != null)
+        {
+            {
+                if (Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() != isWhite)
+                {
+                    Destroy(Holder.WHOISTHERE());
+                    Holder.SelectedTile().tag = "tile";
+                    PositionToMove();
+                    //movementUnhiglight();
+                }
+
+
+            }
+        }
+
+        else if (!isWhite && Holder.WHOISTHERE() != null)
+        {
+            if (Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() == Holder.BlackCheckSetTrue())
+            {
+                Destroy(Holder.WHOISTHERE());
+                Holder.SelectedTile().tag = "tile";
+                PositionToMove();
+                // movementUnhiglight();
+                Holder.BlackCheckSetFalse();
+            }
+
         }
     }
 
@@ -66,14 +110,15 @@ public class JR_Bishop : JR_BasePawn {
         {
             x--;
             z++;
-            if (x < 0 || z >= 8 || Holder.Tiles[x, z].tag == "Occupied")
+            if (x < 0 || z >= 8 || Holder.Tiles[x, z].tag == "Occupied" )
             {
                 break;
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+
             }
         }
     }
@@ -93,8 +138,9 @@ public class JR_Bishop : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+               // Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+
             }
         }
     }
@@ -114,7 +160,7 @@ public class JR_Bishop : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+               // Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
             }
         }
@@ -135,8 +181,9 @@ public class JR_Bishop : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+
             }
         }
     }

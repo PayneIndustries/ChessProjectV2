@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class JR_BasePawn : MonoBehaviour
 {
+    /*        
+//        Developer Name: Jeremiah Rodriguez
+//         Contribution: Created the BasePawn to build off of every other pawn.
+//         Feature : Created to run the base movement of the pieces. This script handles Highlight.
+//         Start & End dates : 10/28/17 - 11/10/17
+    //                References: No references were used
+    //                        Links: NA
+
+//              
+//                        
+//*/
 
     public GameObject Controller;
     public GameObject currentPawn;
@@ -11,23 +22,34 @@ public class JR_BasePawn : MonoBehaviour
     private Vector3 newPosition;
     private GameObject targetedSquare;
     private JR_TilePositionScript movementCheck;
+    public JR_BasePawn thisPawnScript;
 
     [SerializeField]public Vector3 startPosition;
     private ZM_BoardManager board;
     public GameObject BoardManager;
     public bool isWhite;
-    private TurnSwap turnSwap;
+    protected TurnSwap turnSwap;
     private HighlightScript setColor;
+    public bool inCheck;
 
     // Use this for initialization
+
+    public void Awake()
+    {
+       turnSwap = Controller.GetComponent<TurnSwap>(); 
+    }
     public void Start()
     {
-        currentPawn.transform.position = new Vector3 (startPosition.x,startPosition.y,startPosition.z);
+        if (turnSwap.wasInstantiated != true)
+        {
+            currentPawn.transform.position = new Vector3(startPosition.x, startPosition.y, startPosition.z);
+        }
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
         board = BoardManager.GetComponent<ZM_BoardManager>();
         turnSwap = Controller.GetComponent<TurnSwap>();
         setColor = currentPawn.GetComponent<HighlightScript>();
+        thisPawnScript = this.GetComponent<JR_BasePawn>();
 
         if (isWhite)
         {
@@ -41,7 +63,7 @@ public class JR_BasePawn : MonoBehaviour
 
     public void Update()
     {
-        
+
     }
     
     public void FixedUpdate() {
@@ -50,19 +72,26 @@ public class JR_BasePawn : MonoBehaviour
 
     public void PositionToMove()
     {
-        if (currentPawn.tag == "Selected")
+        if (inCheck)
         {
-            if (board.SelectedTile() != null && board.SelectedTile().tag != "Occupied")
+            print("You are in check!, You must move your king!!!");
+        }
+        else
+        {
+            if (currentPawn.tag == "Selected")
             {
-                targetedSquare = board.SelectedTile();
-                newPosition = new Vector3(targetedSquare.transform.position.x,0.5f, targetedSquare.transform.position.z);
-                MovedPosition();
-                
-            }
-            
-            else if (board.SelectedTile() == null)
-            {
-                Debug.Log("Object instance 'board' not set");
+                if (board.SelectedTile() != null && board.SelectedTile().tag != "Occupied")
+                {
+                    targetedSquare = board.SelectedTile();
+                    newPosition = new Vector3(targetedSquare.transform.position.x, currentPawn.transform.position.y, targetedSquare.transform.position.z);
+                    MovedPosition();
+
+                }
+
+                else if (board.SelectedTile() == null)
+                {
+                    Debug.Log("Object instance 'board' not set");
+                }
             }
         }
     }
@@ -96,7 +125,7 @@ public class JR_BasePawn : MonoBehaviour
         return BoardManager;
     }
 
-    protected void movementUnhiglight()
+   /* protected void movementUnhiglight()
     {
         foreach (GameObject tile in board.Tiles)
         {
@@ -109,7 +138,7 @@ public class JR_BasePawn : MonoBehaviour
                 tile.GetComponent<Renderer>().material.color = board.lightB;
             }
         }
-    }
+    }*/
 
     private void OnDestroy()
     {
@@ -124,16 +153,10 @@ public class JR_BasePawn : MonoBehaviour
         }
     }
 
+    public void Instantiate()
+    {
+        Controller = GameObject.Find("ControlManagerScript");
+        BoardManager = GameObject.Find("BoardControl");
+    }
 }
-
-/*        
-//        Developer Name: Jeremiah Rodriguez
-//         Contribution: Created the BasePawn to build off of every other pawn.
-//                Feature : Created to run the base movement of the pieces.
-//                Start & End dates : 10/28/17 - 10/29/17
-//                References:
-//                        Links:
-//*/
-
-
     //Edited by Zaryn Magtibay

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ZM_BoardManager : MonoBehaviour {
 
+    //         Developer Name: Jeremiah Rodriguez
+    //         Contribution: I wrote the start of ZM_Boardmanager and continued to work with Zaryn into completing the script.
+    //         Feature : This script manages everything on the board and has a major role in the entire game. This holds all the tiles and stores them as well as sends information to other scripts as to what info is on the tiles.
+    //         Start & End dates : 10/28/17 - 11/10/17 
+    //                References: No references were used
+    //                        Links: NA
+
     public GameObject[,] Tiles = new GameObject [8,8];
     public GameObject[] ChessPieces = new GameObject[32];
     private GameObject selectedTile;
@@ -12,6 +19,8 @@ public class ZM_BoardManager : MonoBehaviour {
     private Vector3 positionOfTileSelected;
     public Camera Camera;
     private Vector3 playerLocation;
+    public TurnSwap turnSwapCheck;
+    public GameObject TurnSwapHolder;
 
     public Color brown;
     public Color lightB;
@@ -21,11 +30,14 @@ public class ZM_BoardManager : MonoBehaviour {
     private GameObject pawn;
     private GameObject whoisthereinfo;
     private bool playerDestroyBlack;
+    private bool justForKing;
 
 
     // Use this for initialization
-    void Start () {
-        
+    void Start ()
+    {
+        TurnSwapHolder = GameObject.Find("ControlManagerScript");
+        turnSwapCheck = TurnSwapHolder.GetComponent<TurnSwap>();
         cameraControl = Camera.GetComponent<JR_CameraTileLocation>();
             for (int i = 0; i < 8; i++)
             {
@@ -43,6 +55,8 @@ public class ZM_BoardManager : MonoBehaviour {
                 }
             }
         }
+
+ 
 	
 	// Update is called once per frame.
 	void Update () {
@@ -110,10 +124,13 @@ public class ZM_BoardManager : MonoBehaviour {
     public GameObject WHOISTHERE()
     {
         whoisthereinfo = tileLocationscript.WhoIsHere();
-        JR_BasePawn blackCheck = whoisthereinfo.GetComponent<JR_BasePawn>();
-        if(blackCheck.isWhite == true)
+        if (whoisthereinfo != null)
         {
-            BlackCheckSetTrue();
+            JR_BasePawn blackCheck = whoisthereinfo.GetComponent<JR_BasePawn>();
+            if (blackCheck.isWhite == true)
+            {
+                BlackCheckSetTrue();
+            }
         }
         return whoisthereinfo;
     }
@@ -122,6 +139,8 @@ public class ZM_BoardManager : MonoBehaviour {
     {
         GameObject info = WHOISTHERE();
         JR_BasePawn pawn = info.GetComponent<JR_BasePawn>();
+
+
         return pawn.isWhite;
 
     }
@@ -140,6 +159,23 @@ public class ZM_BoardManager : MonoBehaviour {
     public void BlackCheckSetFalse()
     {
         playerDestroyBlack = false;
+    }
+
+    public bool JustForKing(){
+        GameObject info = WHOISTHERE();
+        JR_BasePawn pawn = info.GetComponent<JR_BasePawn>();
+        if(pawn.isWhite == true)
+        {
+            justForKing = true;
+        }
+
+        return justForKing;
+    }
+
+    public bool JustForKingFalse()
+    {
+        justForKing = false;
+        return justForKing;
     }
         
 }

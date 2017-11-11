@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditsScreen.unity
     guid: 18ae2b0f57072cd4095ee5fc3b983c7e
-  - enabled: 0
-    path: 
-    guid: 392fd054f1f105b4da122bc6fe581848
+  - enabled: 1
+    path: Assets/Scenes/WinScreenWhite.unity
+    guid: dcc6b21be7fb5724d98d2d7967118b32
+  - enabled: 1
+    path: Assets/Scenes/WinScreenBlack.unity
+    guid: c69999971098464429d99d4c03e3ac7d
+  - enabled: 1
+    path: Assets/Scenes/ChessBoardTestScene.unity
+    guid: efd61df16c3de5e4bb610f1834027a55

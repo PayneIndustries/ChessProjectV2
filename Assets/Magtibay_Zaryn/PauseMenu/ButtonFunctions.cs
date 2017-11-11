@@ -12,10 +12,12 @@ public class ButtonFunctions : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    public void MainMenu() {
-        SceneManager.LoadScene("MainMenuScreen");
+    public void OnMouseClick()
+    {
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
+    
 
     public void QuitGame() {
         //UnityEditor.EditorApplication.isPlaying = false;

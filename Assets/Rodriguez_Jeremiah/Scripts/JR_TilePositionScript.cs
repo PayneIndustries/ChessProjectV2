@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class JR_TilePositionScript : MonoBehaviour {
 
+    //         Developer Name: Jeremiah Rodriguez
+    //         Contribution: I wrote the tilepositionscript. This script manages the individual checker tiles.
+    //         Feature : These tiles are important for movement in the game.
+    //         Start & End dates : 10/30/17 - 10/31/17 
+    //                References: No references were used
+    //                        Links: NA
+
     public GameObject thisTile;
     private Vector3 tilePosition;
     private bool pawnHere;
     private ZM_BoardManager boardManager;
     private GameObject whoIsHere;
     public bool validMove;
-
 
 
     // Use this for initialization
@@ -81,11 +87,3 @@ public class JR_TilePositionScript : MonoBehaviour {
     
 }
 
-/*        
-//        Developer Name: Jeremiah Rodriguez
-//         Contribution: Runs the positions of the tiles. Sends info to main control.
-//                Feature : Created the tile script that indicates the position of the tile.
-//                Start & End dates : 10/30/17 - Current
-//                References:
-//                        Links:
-//*/
