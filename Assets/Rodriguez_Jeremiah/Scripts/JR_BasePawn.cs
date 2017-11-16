@@ -52,6 +52,19 @@ public class JR_BasePawn : MonoBehaviour
         {
             currentPawn.transform.position = new Vector3(startPosition.x, startPosition.y, startPosition.z);
         }
+
+        if(turnSwap.wasInstantiated == true)
+        {
+            if (this.isWhite)
+            {
+                turnSwap.whitePieces.Add(this.gameObject);
+            }
+
+            else
+            {
+                turnSwap.blackPieces.Add(this.gameObject);
+            }
+        }
         currentPosition = currentPawn.transform.position;
         newPosition = currentPosition;
         board = BoardManager.GetComponent<ZM_BoardManager>();

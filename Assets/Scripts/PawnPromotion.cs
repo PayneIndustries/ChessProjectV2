@@ -42,6 +42,7 @@ public class PawnPromotion : MonoBehaviour
         promoUI = GameObject.Find("PromotionUI");
         promoUI.SetActive(false);
         boardRef = BoardManager.GetComponent<ZM_BoardManager>();
+        print("Hello");
 	}
 	
 	// Update is called once per frame
@@ -69,15 +70,12 @@ public class PawnPromotion : MonoBehaviour
         {
             Instantiate(Queen, new Vector3(pawn.transform.position.x, 0.5f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.whitePieces.Add(Queen);
-            boardRef.turnSwapCheck.whitePieces.Remove(pawn);
             
         }
         else
         {
             Instantiate(BlackQueen, new Vector3(pawn.transform.position.x, 0.5f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.blackPieces.Add(Queen);
             boardRef.turnSwapCheck.blackPieces.Remove(pawn);
         }
         Debug.Log("Has an Object been instantiated?");
@@ -94,12 +92,12 @@ public class PawnPromotion : MonoBehaviour
             Destroy(pawn);
             boardRef.turnSwapCheck.whitePieces.Add(Bishop);
             boardRef.turnSwapCheck.whitePieces.Remove(pawn);
+
         }
         else
         {
             Instantiate(BlackBishop, new Vector3(pawn.transform.position.x, 0.1f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.blackPieces.Add(Bishop);
             boardRef.turnSwapCheck.blackPieces.Remove(pawn);
         }
         Debug.Log("Has an Object been instantiated?");
@@ -117,14 +115,12 @@ public class PawnPromotion : MonoBehaviour
         {
             Instantiate(Knight, new Vector3(pawn.transform.position.x, 0.95f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.whitePieces.Add(Knight);
             boardRef.turnSwapCheck.whitePieces.Remove(pawn);
         }
         else
         {
             Instantiate(BlackKnight, new Vector3(pawn.transform.position.x, 0.95f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.blackPieces.Add(Knight);
             boardRef.turnSwapCheck.blackPieces.Remove(pawn);
         }
 
@@ -140,14 +136,12 @@ public class PawnPromotion : MonoBehaviour
         {
             Instantiate(Rook, new Vector3(pawn.transform.position.x, 0.5f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.whitePieces.Add(Rook);
             boardRef.turnSwapCheck.whitePieces.Remove(pawn);
         }
         else
         {
             Instantiate(BlackRook, new Vector3(pawn.transform.position.x, 0.5f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.blackPieces.Add(Rook);
             boardRef.turnSwapCheck.blackPieces.Remove(pawn);
         }
         promoUI.SetActive(false);

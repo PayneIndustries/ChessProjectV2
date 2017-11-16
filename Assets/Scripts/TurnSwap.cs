@@ -83,20 +83,33 @@ public class TurnSwap : MonoBehaviour {
     {
         if(curPlayerWhite != true)
         {
-            JR_KingPawn king; 
+            JR_KingPawn king;
+            GameObject kingPawn;
             foreach(GameObject i in blackPieces)
             {
-               king = i.GetComponent<JR_KingPawn>();
-               king.Check();
+                kingPawn = i;
+                king = kingPawn.GetComponent<JR_KingPawn>();
+
+                if (king != null)
+                {
+                    king.IsInCheck = true;
+                    king.Check();
+                }
             }
         }
         else
         {
             JR_KingPawn king;
+            GameObject kingPawn;
             foreach (GameObject i in whitePieces)
             {
-                king = i.GetComponent<JR_KingPawn>();
-                king.Check();
+                kingPawn = i;
+                king = kingPawn.GetComponent<JR_KingPawn>();
+                if (king != null)
+                {
+                    king.IsInCheck = true;
+                    king.Check();
+                }
             }
         }
     }
@@ -106,19 +119,31 @@ public class TurnSwap : MonoBehaviour {
         if (curPlayerWhite != true)
         {
             JR_KingPawn king;
+            GameObject kingPawn;
             foreach (GameObject i in blackPieces)
             {
-                king = i.GetComponent<JR_KingPawn>();
-                king.UnCheck();
+                kingPawn = i;
+                king = kingPawn.GetComponent<JR_KingPawn>();
+                if (king != null)
+                {
+                    king.IsInCheck = false;
+                    king.UnCheck();
+                }
             }
         }
         else
         {
             JR_KingPawn king;
+            GameObject kingPawn;
             foreach (GameObject i in whitePieces)
             {
-                king = i.GetComponent<JR_KingPawn>();
-                king.UnCheck();
+                kingPawn = i;
+                king = kingPawn.GetComponent<JR_KingPawn>();
+                if (king != null)
+                {
+                    king.IsInCheck = false;
+                    king.UnCheck();
+                }
             }
         }
     }

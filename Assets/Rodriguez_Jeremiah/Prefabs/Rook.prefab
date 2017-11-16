@@ -503,6 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
   currentPawn: {fileID: 1671006786089494}
+  thisPawnScript: {fileID: 0}
   startPosition: {x: 7, y: 0.5, z: 0}
   BoardManager: {fileID: 0}
   isWhite: 1

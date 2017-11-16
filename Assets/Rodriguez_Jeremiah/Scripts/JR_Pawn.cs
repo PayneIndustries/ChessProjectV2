@@ -31,6 +31,7 @@ public class JR_Pawn : JR_BasePawn {
     private Color checkColorIdenity;
     private HighlightScript highlight;
     private bool canDestroyPawn = false;
+    private bool isLegalMove;
 
 
 
@@ -41,6 +42,7 @@ public class JR_Pawn : JR_BasePawn {
         Holder = Board().GetComponent<ZM_BoardManager>();
         isFirstMove = true;
         highlight = thisPawn.GetComponent<HighlightScript>();
+        isLegalMove = false;
 
 
         if (isFirstMove)
@@ -172,7 +174,7 @@ public class JR_Pawn : JR_BasePawn {
         {
             if (isWhite)
             {
-                if (CanDestroy() && Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() != isWhite)
+                if (CanDestroy() && Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() != isWhite && isLegalMove)
                 {
                     Destroy(Holder.WHOISTHERE());
                     Holder.SelectedTile().tag = "tile";
@@ -188,7 +190,7 @@ public class JR_Pawn : JR_BasePawn {
             {
                 Debug.Log(Holder.SelectedTile().tag);
                 Debug.Log(Holder.WhoIsThere2());
-                if (CanDestroy() && Holder.SelectedTile().tag == "Occupied" && Holder.BlackCheckSetTrue())
+                if (CanDestroy() && Holder.SelectedTile().tag == "Occupied" && Holder.BlackCheckSetTrue() && isLegalMove)
                 {
                     Destroy(Holder.WHOISTHERE());
                     Holder.SelectedTile().tag = "tile";
@@ -212,6 +214,7 @@ public class JR_Pawn : JR_BasePawn {
     {
         moveableActions = 1;
         isFirstMove = false;
+        isLegalMove = false;
     }
 
     void pawnMovementHighlight()
@@ -249,10 +252,16 @@ public class JR_Pawn : JR_BasePawn {
             if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
             {
                 canDestroyPawn = true;
+                CheckIfLegalMove();
             }
             else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
             {
                 canDestroyPawn = true;
+                CheckIfLegalMove();
+            }
+            else
+            {
+                canDestroyPawn = false;
             }
         }
 
@@ -261,15 +270,36 @@ public class JR_Pawn : JR_BasePawn {
             if(Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
             {
                 canDestroyPawn = true;
+                CheckIfLegalMove();
 
             }
             else if(Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x + 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z - 1)
             {
                 canDestroyPawn = true;
+                CheckIfLegalMove();
 
+            }
+            else
+            {
+                canDestroyPawn = false;
             }
         }
         return canDestroyPawn;
+    }
+
+    public void CheckIfLegalMove()
+    {
+        Debug.Log("Am I being called?");
+        if(Holder.SelectedTile().transform.position == thisPawn.transform.position || Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x && Holder.WHOISTHERE().transform.position.z == thisPawn.transform.position.z + 1)
+        {
+            isLegalMove = false;
+            Debug.Log("Have I been fired?");
+            
+        }
+        else
+        {
+            isLegalMove = true;
+        }
     }
 }
 

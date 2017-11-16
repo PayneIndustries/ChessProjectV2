@@ -43,10 +43,6 @@ public class JR_KingPawn : JR_BasePawn
     private new void Update()
     {
         base.Update();
-        if (IsInCheck)
-        {
-            Check();
-        }
         if (thisPawn.tag == "Selected")
         {
 
@@ -383,18 +379,19 @@ public class JR_KingPawn : JR_BasePawn
     {
         if (IsInCheck)
         {
+            Debug.Log("Am I being Called?");
             JR_BasePawn disabledPiece;
             if (this.isWhite)
             {
                 foreach (GameObject i in turnSwap.whitePieces)
                 {
-                    if (GameObject.Find("King"))
+                    if (i == GameObject.Find("King"))
                     {
                         print("You are in check!");
                     }
                     else
                     {
-                        disabledPiece = gameObject.GetComponent<JR_BasePawn>();
+                        disabledPiece = i.GetComponent<JR_BasePawn>();
                         disabledPiece.inCheck = true;
                     }
                 }
@@ -408,13 +405,13 @@ public class JR_KingPawn : JR_BasePawn
                     JR_BasePawn disabledPieceBlack;
                     foreach (GameObject i in turnSwap.whitePieces)
                     {
-                        if (GameObject.Find("King"))
+                        if (i == GameObject.Find("King"))
                         {
                             print("You are in check!");
                         }
                         else
                         {
-                            disabledPieceBlack = gameObject.GetComponent<JR_BasePawn>();
+                            disabledPieceBlack = i.GetComponent<JR_BasePawn>();
                             disabledPieceBlack.inCheck = true;
                         }
                     }
@@ -437,6 +434,7 @@ public class JR_KingPawn : JR_BasePawn
 
    public void UnCheck()
     {
+        Debug.Log("Have I been called?");
         if (!IsInCheck)
         {
             JR_BasePawn disabledPiece;
@@ -444,14 +442,14 @@ public class JR_KingPawn : JR_BasePawn
             {
                 foreach (GameObject i in turnSwap.whitePieces)
                 {
-                    if (GameObject.Find("King"))
+                    if (i == GameObject.Find("King"))
                     {
-                        print("You are in check!");
+                        print("You are no longer in check!");
                     }
                     else
                     {
-                        disabledPiece = gameObject.GetComponent<JR_BasePawn>();
-                        disabledPiece.inCheck = true;
+                        disabledPiece = i.GetComponent<JR_BasePawn>();
+                        disabledPiece.inCheck = false;
                     }
                 }
             }
@@ -464,14 +462,14 @@ public class JR_KingPawn : JR_BasePawn
                     JR_BasePawn disabledPieceBlack;
                     foreach (GameObject i in turnSwap.whitePieces)
                     {
-                        if (GameObject.Find("King"))
+                        if (i == GameObject.Find("King"))
                         {
-                            print("You are in check!");
+                            print("You are no longer in check!");
                         }
                         else
                         {
-                            disabledPieceBlack = gameObject.GetComponent<JR_BasePawn>();
-                            disabledPieceBlack.inCheck = true;
+                            disabledPieceBlack = i.GetComponent<JR_BasePawn>();
+                            disabledPieceBlack.inCheck = false;
                         }
                     }
                 }

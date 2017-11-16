@@ -3071,7 +3071,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1762610234937288, guid: 282019b4abfe9dd45ad80281c6985326, type: 2}
       propertyPath: m_Name
-      value: King (1)
+      value: King
       objectReference: {fileID: 0}
     - target: {fileID: 4529768285076978, guid: 282019b4abfe9dd45ad80281c6985326, type: 2}
       propertyPath: m_LocalScale.x

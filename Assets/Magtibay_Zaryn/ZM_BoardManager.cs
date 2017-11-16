@@ -70,6 +70,10 @@ public class ZM_BoardManager : MonoBehaviour {
 
         if (Input.GetButtonDown("Fire1"))
         {
+            if(selectedTile != null)
+            {
+                selectedTile = null;
+            }
             cameraControl.OnClick();
 
             selectedTile = cameraControl.getObject();
