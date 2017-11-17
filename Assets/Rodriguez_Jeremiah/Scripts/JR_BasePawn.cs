@@ -39,12 +39,17 @@ public class JR_BasePawn : MonoBehaviour
     protected TurnSwap turnSwap;
     private HighlightScript setColor;
     public bool inCheck;
+    public AudioClip movement;
+    public AudioClip eat;
+    public AudioSource audio;
+    public GameObject audioManager;
+    public int caseSet;
 
     // Use this for initialization
 
     public void Awake()
     {
-       turnSwap = Controller.GetComponent<TurnSwap>(); 
+       turnSwap = Controller.GetComponent<TurnSwap>();
     }
     public void Start()
     {
@@ -71,6 +76,8 @@ public class JR_BasePawn : MonoBehaviour
         turnSwap = Controller.GetComponent<TurnSwap>();
         setColor = currentPawn.GetComponent<HighlightScript>();
         thisPawnScript = this.GetComponent<JR_BasePawn>();
+        audio = this.GetComponent<AudioSource>();
+        caseSet = 0;
 
         if (isWhite)
         {
@@ -84,7 +91,13 @@ public class JR_BasePawn : MonoBehaviour
 
     public void Update()
     {
-
+        if (currentPawn.tag == "Pawn")
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                currentPawn.GetComponent<JR_BasePawn>().movementUnhiglight();
+            }
+        }
     }
     
     public void FixedUpdate() {
@@ -106,6 +119,8 @@ public class JR_BasePawn : MonoBehaviour
                     targetedSquare = board.SelectedTile();
                     newPosition = new Vector3(targetedSquare.transform.position.x, currentPawn.transform.position.y, targetedSquare.transform.position.z);
                     MovedPosition();
+                    audio.clip = movement;
+                    audio.Play();
 
                 }
 
@@ -146,23 +161,27 @@ public class JR_BasePawn : MonoBehaviour
         return BoardManager;
     }
 
-   /* protected void movementUnhiglight()
+    public void movementUnhiglight()
     {
         foreach (GameObject tile in board.Tiles)
         {
             if (tile.transform.position.z % 2 != 0 && tile.transform.position.x % 2 != 0 || tile.transform.position.z % 2 == 0 && tile.transform.position.x % 2 == 0)
             {
                 tile.GetComponent<Renderer>().material.color = board.brown;
+                tile.GetComponent<JR_TilePositionScript>().validMove = false;
             }
             else
             {
                 tile.GetComponent<Renderer>().material.color = board.lightB;
+                tile.GetComponent<JR_TilePositionScript>().validMove = true;
             }
         }
-    }*/
+    }
 
     private void OnDestroy()
     {
+        audioManager = GameObject.Find("WorldAudio");
+        audioManager.GetComponent<JR_DestroySound>().PlayAudio();
         if (isWhite)
         {
             //remove from white array
@@ -173,6 +192,7 @@ public class JR_BasePawn : MonoBehaviour
             turnSwap.blackPieces.Remove(currentPawn);
         }
     }
+
 
     public void Instantiate()
     {

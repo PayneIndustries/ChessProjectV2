@@ -55,6 +55,9 @@
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -76,9 +79,6 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -96,10 +96,12 @@
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_BasePawn.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Bishop.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_CameraTileLocation.cs" />
+    <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_DestroySound.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_King.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_KingPawn.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Knight.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Pawn.cs" />
+    <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_PieceSwitchManager.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Queen.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_Rook.cs" />
     <Compile Include="Assets\Rodriguez_Jeremiah\Scripts\JR_TilePositionScript.cs" />

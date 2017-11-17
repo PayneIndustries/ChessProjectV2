@@ -45,16 +45,12 @@ public class JR_KingPawn : JR_BasePawn
         base.Update();
         if (thisPawn.tag == "Selected")
         {
-
+            //thisPawn.GetComponent<JR_KingPawn>().kingMovementHighlight();
             if (Input.GetButtonDown("Fire1"))
             {
                 CheckIfValid();
+                movementUnhiglight();
             }
-        }
-
-        else
-        {
-            //movementUnhiglight();
         }
     }
 
@@ -476,5 +472,165 @@ public class JR_KingPawn : JR_BasePawn
             }
         }
     }
+    //Movement Highlight
+  /*  void kingMovementHighlight()
+    {
+        horizontalLeftMovement();
+        horizontalRightMovement();
+        verticalUpMovement();
+        verticalDownMovement();
+        checkUL();
+        checkUR();
+        checkLL();
+        checkLR();
+    }
+
+    void horizontalRightMovement()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+        if (x >= 0 && x < 8)
+        {
+            x = x + 1;
+
+
+            if (Holder.Tiles[x, z].tag != "Occupied" && x < 8)
+            {
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+            }
+        }
+    }
+
+    void horizontalLeftMovement()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+        if (x >= 0 && x < 8)
+        {
+            x = x - 1;
+
+            if (Holder.Tiles[x, z].tag != "Occupied" && x >= 0)
+            {
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+            }
+        }
+    }
+
+    void verticalUpMovement()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+
+        if (z >= 0 && z < 8)
+        {
+            z = z + 1;
+
+
+            if (Holder.Tiles[x, z].tag != "Occupied" && z < 8)
+            {
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+            }
+        }
+    }
+
+    void verticalDownMovement()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+
+        if (z >= 0 && z < 8)
+        {
+            z = z - 1;
+
+
+            if (Holder.Tiles[x, z].tag != "Occupied" && z >= 0)
+            {
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
+            }
+        }
+    }
+
+    void checkUL()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+
+        if (x >= 0 && x < 8 && z >= 0 && z < 8)
+        {
+            x = x - 1;
+            z = z - 1;
+
+            if (x >= 0 || z < 8)
+            {
+                if (Holder.Tiles[x, z].tag != "Occupied")
+                {
+                    Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+        }
+    }
+
+    void checkUR()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+
+        if (x >= 0 && x < 8 && z >= 0 && z < 8)
+        {
+            x = x + 1;
+            z = z + 1;
+
+            if (x < 8 || z < 8)
+            {
+                if (Holder.Tiles[x, z].tag != "Occupied")
+                {
+                    Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+        }
+    }
+    void checkLL()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+
+        if (x >= 0 && x < 8 && z >= 0 && z < 8)
+        {
+            x = x - 1;
+            z = z + 1;
+
+            if (x >= 0 || z >= 0)
+            {
+                if (Holder.Tiles[x, z].tag != "Occupied")
+                {
+                    Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+        }
+    }
+
+    void checkLR()
+    {
+        int x = (int)thisPawn.transform.position.x;
+        int z = (int)thisPawn.transform.position.z;
+
+        if (x >= 0 && x < 8 && z >= 0 && z < 8)
+        {
+            x = x + 1;
+            z = z - 1;
+
+            if (x < 8 || z >= 0)
+            {
+                if (Holder.Tiles[x, z].tag != "Occupied")
+                {
+                    Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                }
+            }
+        }
+    }*/
 }
 

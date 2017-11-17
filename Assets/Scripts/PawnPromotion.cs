@@ -70,7 +70,8 @@ public class PawnPromotion : MonoBehaviour
         {
             Instantiate(Queen, new Vector3(pawn.transform.position.x, 0.5f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            
+            boardRef.turnSwapCheck.whitePieces.Remove(pawn);
+
         }
         else
         {
@@ -90,7 +91,6 @@ public class PawnPromotion : MonoBehaviour
         {
             Instantiate(Bishop, new Vector3(pawn.transform.position.x, 0.1f, pawn.transform.position.z), Quaternion.identity);
             Destroy(pawn);
-            boardRef.turnSwapCheck.whitePieces.Add(Bishop);
             boardRef.turnSwapCheck.whitePieces.Remove(pawn);
 
         }

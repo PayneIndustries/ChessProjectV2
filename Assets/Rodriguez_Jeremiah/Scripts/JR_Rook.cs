@@ -30,14 +30,16 @@ public class JR_Rook : JR_BasePawn {
 
     private int moveableActions;
     private Vector3 tileThatPawnIsOn;
+    private bool isvalidMove;
 
     private new void Start()
     {
 
-            base.Start();
+        base.Start();
         basePawn = thisPawnScript;
         GameBoard = Board();
-            Holder = Board().GetComponent<ZM_BoardManager>();
+        Holder = Board().GetComponent<ZM_BoardManager>();
+        isvalidMove = false;
 
     }
 
@@ -51,17 +53,22 @@ public class JR_Rook : JR_BasePawn {
         if (thisPawn.tag == "Selected")
         {
             //tileThatPawnIsOn = Holder.whatTileIsPawnOn(thisPawn).transform.position;
-            rookMovementHighlight();
+            thisPawn.GetComponent<JR_Rook>().rookMovementHighlight();
             if (Input.GetButtonDown("Fire1"))
             {
+                if(Holder.SelectedTile().transform.position.x != this.transform.position.x  && Holder.SelectedTile().transform.position.z != this.transform.position.z)
+                {
+                    isvalidMove = false;
+                }
+                else
+                {
+                    isvalidMove = true;
+                }
                 //checkMovement();
                 newCheckMovement();
+                movementUnhiglight();
                 //rookMovementUnhiglight();
             }
-        }
-        else
-        {
-            //movementUnhiglight();
         }
     }
     /*
@@ -89,14 +96,14 @@ public class JR_Rook : JR_BasePawn {
     }
 
     void newCheckMovement() {
-        if (Holder.SelectedTile().GetComponent<JR_TilePositionScript>().validMove == true && Holder.SelectedTile().tag != "Occupied") {
+        if (Holder.SelectedTile().GetComponent<JR_TilePositionScript>().validMove == true && Holder.SelectedTile().tag != "Occupied" && isvalidMove) {
             PositionToMove();
            // movementUnhiglight();
         }
 
         else if (isWhite)
         {
-            if (Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() != isWhite)
+            if (Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() != isWhite && isvalidMove)
             {
                 Destroy(Holder.WHOISTHERE());
                 Holder.SelectedTile().tag = "tile";
@@ -109,7 +116,7 @@ public class JR_Rook : JR_BasePawn {
 
         else
         {
-            if(Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() == Holder.BlackCheckSetTrue())
+            if(Holder.SelectedTile().tag == "Occupied" && Holder.WhoIsThere2() == Holder.BlackCheckSetTrue() && isvalidMove)
             {
                 Destroy(Holder.WHOISTHERE());
                 Holder.SelectedTile().tag = "tile";
@@ -132,7 +139,7 @@ public class JR_Rook : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-               // Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
                 if (Holder.Tiles[x, z].tag == "Occupied")
                 {
@@ -154,7 +161,7 @@ public class JR_Rook : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-                //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
                 if (Holder.Tiles[x, z].tag == "Occupied")
                 {
@@ -177,7 +184,7 @@ public class JR_Rook : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-               // Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
                 if (Holder.Tiles[x, z].tag == "Occupied")
                 {
@@ -199,7 +206,7 @@ public class JR_Rook : JR_BasePawn {
             }
             else if (Holder.Tiles[x, z].tag != "Occupied")
             {
-               // Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+                Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
                 Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
                 if (Holder.Tiles[x, z].tag == "Occupied")
                 {
@@ -209,3 +216,5 @@ public class JR_Rook : JR_BasePawn {
         }
     }
 }
+
+

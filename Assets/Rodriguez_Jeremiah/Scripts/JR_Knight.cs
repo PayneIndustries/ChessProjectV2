@@ -47,16 +47,13 @@ public class JR_Knight : JR_BasePawn {
         if (thisPawn.tag == "Selected")
         {
            // tileThatPawnIsOn = Holder.whatTileIsPawnOn(thisPawn).transform.position;
-            bishopMovementHighlight();
+            thisPawn.GetComponent<JR_Knight>().knightMovementHighlight();
 
             if (Input.GetButtonDown("Fire1"))
             {
                 checkMovement();
+                movementUnhiglight();
             }
-        }
-        else
-        {
-           // movementUnhiglight();
         }
     }
 
@@ -93,7 +90,7 @@ public class JR_Knight : JR_BasePawn {
         }
     }
 
-    void bishopMovementHighlight()
+    void knightMovementHighlight()
     {
         checkUL();
         checkUR();
@@ -112,7 +109,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z + 2;
         if(x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -124,7 +121,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z + 2;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -136,7 +133,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z + 1;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -148,7 +145,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z - 1;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-           // Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -160,7 +157,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z - 2;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -172,7 +169,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z - 2;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -184,7 +181,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z + 1;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }
@@ -196,7 +193,7 @@ public class JR_Knight : JR_BasePawn {
         int z = (int)thisPawn.transform.position.z - 1;
         if (x >= 0 && x < 8 && z >= 0 && z < 8 && Holder.SelectedTile().tag != "Occupied")
         {
-            //Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
+            Holder.Tiles[x, z].GetComponent<Renderer>().material.color = Color.yellow;
             Holder.Tiles[x, z].GetComponent<JR_TilePositionScript>().validMove = true;
         }
     }

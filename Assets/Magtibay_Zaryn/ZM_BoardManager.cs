@@ -134,7 +134,10 @@ public class ZM_BoardManager : MonoBehaviour {
 
     public GameObject WHOISTHERE()
     {
-        whoisthereinfo = tileLocationscript.WhoIsHere();
+        if (tileLocationscript.WhoIsHere() != null)
+        {
+            whoisthereinfo = tileLocationscript.WhoIsHere();
+        }
         if (whoisthereinfo != null)
         {
             JR_BasePawn blackCheck = whoisthereinfo.GetComponent<JR_BasePawn>();
@@ -194,5 +197,5 @@ public class ZM_BoardManager : MonoBehaviour {
 //Editted by Jeremiah Rodriguez
 
 
-    //figure out how to tell what tile a pawn is on.
-    //return tile location to get a tile out of the array
+//figure out how to tell what tile a pawn is on.
+//return tile location to get a tile out of the array

@@ -57,19 +57,12 @@ public class JR_Pawn : JR_BasePawn {
         if (thisPawn.tag == "Selected")
         {
 
-            if (highlight.IsSelected())
-            {
-                pawnMovementHighlight();
-            }
+                thisPawn.GetComponent<JR_Pawn>().pawnMovementHighlight();
             if (Input.GetButtonDown("Fire1"))
             {
                 CheckIfValid();
+                movementUnhiglight();
             }
-        }
-
-        else
-        {
-            //movementUnhiglight();
         }
     }
 
@@ -219,27 +212,52 @@ public class JR_Pawn : JR_BasePawn {
 
     void pawnMovementHighlight()
     {
-       /* foreach (GameObject tile in Holder.Tiles)
-        {
-            if (isFirstMove)
+        if (isWhite) {
+            foreach (GameObject tile in Holder.Tiles)
             {
-                if (tile.transform.position.z == thisPawn.transform.position.z + 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                if (isFirstMove)
                 {
-                    tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    if (tile.transform.position.z == thisPawn.transform.position.z + 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                    {
+                        tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
+                    else if (tile.transform.position.z == thisPawn.transform.position.z + 2 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                    {
+                        tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
                 }
-                else if (tile.transform.position.z == thisPawn.transform.position.z + 2 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                else if (!isFirstMove)
                 {
-                    tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    if (tile.transform.position.z == thisPawn.transform.position.z + 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                    {
+                        tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
                 }
             }
-            else if (!isFirstMove)
+        }
+        else {
+            foreach (GameObject tile in Holder.Tiles)
             {
-                if (tile.transform.position.z == thisPawn.transform.position.z + 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                if (isFirstMove)
                 {
-                    tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    if (tile.transform.position.z == thisPawn.transform.position.z - 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                    {
+                        tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
+                    else if (tile.transform.position.z == thisPawn.transform.position.z - 2 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                    {
+                        tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
+                }
+                else if (!isFirstMove)
+                {
+                    if (tile.transform.position.z == thisPawn.transform.position.z - 1 && tile.transform.position.x == thisPawn.transform.position.x && tile.tag != "Occupied")
+                    {
+                        tile.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
                 }
             }
-        }*/
+        }
     }
 
     public bool CanDestroy()
@@ -253,11 +271,13 @@ public class JR_Pawn : JR_BasePawn {
             {
                 canDestroyPawn = true;
                 CheckIfLegalMove();
+
             }
             else if (Holder.SelectedTile().transform.position.x == thisPawn.transform.position.x - 1 && Holder.SelectedTile().transform.position.z == thisPawn.transform.position.z + 1)
             {
                 canDestroyPawn = true;
                 CheckIfLegalMove();
+
             }
             else
             {
@@ -294,7 +314,7 @@ public class JR_Pawn : JR_BasePawn {
         {
             isLegalMove = false;
             Debug.Log("Have I been fired?");
-            
+
         }
         else
         {
